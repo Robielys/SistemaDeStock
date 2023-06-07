@@ -1,6 +1,7 @@
 #ifndef CLIENTE_H_INCLUDED
 #define CLIENTE_H_INCLUDED
-#include "Domicilio.h"
+#include <string>
+using namespace std;
 
 class Cliente{
 private:
@@ -8,7 +9,6 @@ private:
     char _NombreEmpresa[50];
     long _Cuit;
     char _Correo[50];
-    Domicilio domicilioCliente;
     bool _Estado;
 public:
     void setID(int id);

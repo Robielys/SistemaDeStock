@@ -2,9 +2,6 @@
 #include<string.h>
 using namespace std;
 #include "Cliente.h"
-#include "ArchivoCliente.h"
-#include "Funciones.h"
-#include "rlutil.h"
 
 
 void Cliente::setID(int id)
@@ -64,14 +61,6 @@ void Cliente::Mostrar(int c)
 {
     if(_Estado == true)
     {
-        if(c==1){
-        cout << espacio(1,2) <<_ID << espacio(sizeof(Cliente)/55,0) << _NombreEmpresa << espacio(sizeof(Cliente)/70,0)
-        << _Cuit << espacio(sizeof(Cliente)/60,0) << _Correo << endl;
-        /*cout << _ID << _NombreEmpresa << _Cuit << _Correo << endl;*/
-        }
-        else{
-            cout << "  Cuit: " << _Cuit << "  Empresa: " << _NombreEmpresa << "  Correo: " <<_Correo << endl;
-        }
     }
 
 }

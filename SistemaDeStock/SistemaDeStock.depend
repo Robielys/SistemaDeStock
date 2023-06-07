@@ -1,0 +1,20 @@
+# depslib dependency file v1.0
+1584205420 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\main.cpp
+	<iostream>
+
+1686148538 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\cliente.cpp
+	<iostream>
+	<string.h>
+	"Cliente.h"
+
+1686148662 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\cliente.h
+	<string>
+
+1686148218 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientearchivo.cpp
+	"ClienteArchivo.h"
+	<iostream>
+	"Cliente.h"
+
+1686148218 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientearchivo.h
+	"Cliente.h"
+
