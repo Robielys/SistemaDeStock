@@ -57,7 +57,7 @@ void Cliente::Cargar()
     cin >> _Correo;
     _Estado = true;
 }
-void Cliente::Mostrar(int c)
+void Cliente::Mostrar()
 {
     if(_Estado == true)
     {

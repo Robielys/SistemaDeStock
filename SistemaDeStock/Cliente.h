@@ -22,7 +22,7 @@ public:
     string getCorreo();
     bool getEstado();
     void Cargar();
-    void Mostrar(int c);
+    void Mostrar();
 };
 
 #endif // CLIENTE_H_INCLUDED

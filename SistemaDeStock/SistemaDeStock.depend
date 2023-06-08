@@ -2,19 +2,28 @@
 1584205420 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\main.cpp
 	<iostream>
 
-1686148538 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\cliente.cpp
+1686232697 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\cliente.cpp
 	<iostream>
 	<string.h>
 	"Cliente.h"
 
-1686148662 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\cliente.h
+1686232697 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\cliente.h
 	<string>
 
-1686148218 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientearchivo.cpp
+1686233259 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientearchivo.cpp
 	"ClienteArchivo.h"
 	<iostream>
 	"Cliente.h"
 
-1686148218 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientearchivo.h
+1686233242 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientearchivo.h
 	"Cliente.h"
+
+1686233242 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientemenu.cpp
+	<string>
+	"ClienteMenu.h"
+	"ClienteArchivo.h"
+	"Cliente.h"
+	<iostream>
+
+1686231335 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientemenu.h
 

@@ -38,6 +38,8 @@
 		<Unit filename="Cliente.h" />
 		<Unit filename="ClienteArchivo.cpp" />
 		<Unit filename="ClienteArchivo.h" />
+		<Unit filename="ClienteMenu.cpp" />
+		<Unit filename="ClienteMenu.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

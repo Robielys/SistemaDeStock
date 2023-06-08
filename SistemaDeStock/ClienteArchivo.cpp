@@ -23,7 +23,7 @@ void ClienteArchivo::listar(Cliente* cli, int nroRegistro)
     fread(cli, sizeof(Cliente), nroRegistro, pFile);
     fclose(pFile);
 }
-Cliente ClienteArchivo::BuscarCli(int nroID)
+Cliente ClienteArchivo::BuscarCliente(int nroID)
 {
 
     Cliente cli;
@@ -53,7 +53,7 @@ bool ClienteArchivo::guardar(Cliente cli)
     fclose(pFile);
     return true;
 }
-bool ClienteArchivo::guardarModificacion(Cliente cli, int posicion)
+bool ClienteArchivo::guardarModificacion(Cliente cliente, int posicion)
 {
 
     FILE* pFile = fopen("Clientes.dat","rb+");
@@ -63,7 +63,7 @@ bool ClienteArchivo::guardarModificacion(Cliente cli, int posicion)
         exit(10);
     }
     fseek(pFile,posicion * sizeof (Cliente),SEEK_SET);
-    fwrite(&cli,sizeof(Cliente),1,pFile);
+    fwrite(&cliente,sizeof(Cliente),1,pFile);
     fclose(pFile);
     return true;
 }

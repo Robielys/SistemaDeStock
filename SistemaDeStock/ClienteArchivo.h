@@ -5,9 +5,9 @@
 class ClienteArchivo {
 public:
     void listar(Cliente* cli, int nroRegistro);
-    Cliente BuscarCli(int nroID);
+    Cliente BuscarCliente(int nroID);
     bool guardar(Cliente cli);
-    bool guardarModificacion(Cliente cli, int posicion);
+    bool guardarModificacion(Cliente cliente, int posicion);
     int buscar(int ID);
     int getCantidad();
     int CrearID();
