@@ -1,9 +1,10 @@
 #include <iostream>
 
 using namespace std;
-
+#include "ClienteMenu.h"
 int main()
 {
-    cout << "Hello world!" << endl;
+    ClienteMenu obj;
+    obj.mostrar();
     return 0;
 }
