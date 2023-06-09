@@ -40,6 +40,8 @@
 		<Unit filename="ClienteArchivo.h" />
 		<Unit filename="ClienteMenu.cpp" />
 		<Unit filename="ClienteMenu.h" />
+		<Unit filename="ProgramaPrincipal.cpp" />
+		<Unit filename="ProgramaPrincipal.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

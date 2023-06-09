@@ -1,10 +1,10 @@
 #include <iostream>
 
 using namespace std;
-#include "ClienteMenu.h"
+#include "ProgramaPrincipal.h"
 int main()
 {
-    ClienteMenu obj;
-    obj.mostrar();
+    ProgramaPrincipal obj;
+    obj.Ejecutar();
     return 0;
 }
