@@ -1,8 +1,9 @@
 #ifndef ARTICULO_H
 #define ARTICULO_H
-
 #include <cstring>
-#include<string.h>
+#include<string>
+#include "ArticuloArchivo.h"
+
 using namespace std;
 class Articulo{
 private:

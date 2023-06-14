@@ -2,10 +2,11 @@
 #include <string.h>
 using namespace std;
 #include "Articulo.h"
+#include "ArticuloArchivo.h"
 
 void Articulo::setID(int ID)
 {
-    ArchivoArticulo CanArt;
+    ArticuloArchivo CanArt;
     _ID =ID;
 }
 void Articulo::setCategoria(string Categoria)

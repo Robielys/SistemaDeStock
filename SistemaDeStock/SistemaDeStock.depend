@@ -1,6 +1,7 @@
 # depslib dependency file v1.0
-1584205420 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\main.cpp
+1686756887 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\main.cpp
 	<iostream>
+	"ProgramaPrincipal.h"
 
 1686232697 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\cliente.cpp
 	<iostream>
@@ -18,14 +19,14 @@
 1686233242 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientearchivo.h
 	"Cliente.h"
 
-1686233242 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientemenu.cpp
+1686235510 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientemenu.cpp
 	<string>
 	"ClienteMenu.h"
 	"ClienteArchivo.h"
 	"Cliente.h"
 	<iostream>
 
-1686231335 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientemenu.h
+1686235510 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientemenu.h
 
 1686234350 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\cliente.cpp
 	<iostream>
@@ -62,4 +63,11 @@
 
 1686323027 c:\users\agnostic\documents\github\sistemadestock\sistemadestock\programaprincipal.h
 	"ClienteMenu.h"
+
+1686756887 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\programaprincipal.h
+	"ClienteMenu.h"
+
+1686756887 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\programaprincipal.cpp
+	<iostream>
+	"ProgramaPrincipal.h"
 

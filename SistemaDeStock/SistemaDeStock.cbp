@@ -14,6 +14,7 @@
 				<Compiler>
 					<Add option="-g" />
 					<Add directory="../SistemaDeStock" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -24,6 +25,7 @@
 				<Compiler>
 					<Add option="-O2" />
 					<Add directory="../SistemaDeStock" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -36,6 +38,7 @@
 		</Compiler>
 		<Unit filename="Articulo.cpp" />
 		<Unit filename="Articulo.h" />
+		<Unit filename="ArticuloArchivo.cpp" />
 		<Unit filename="Cliente.cpp" />
 		<Unit filename="Cliente.h" />
 		<Unit filename="ClienteArchivo.cpp" />
@@ -44,6 +47,7 @@
 		<Unit filename="ClienteMenu.h" />
 		<Unit filename="ProgramaPrincipal.cpp" />
 		<Unit filename="ProgramaPrincipal.h" />
+		<Unit filename="include/ArticuloArchivo.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
