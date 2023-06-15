@@ -40,6 +40,8 @@
 		<Unit filename="Articulo.h" />
 		<Unit filename="ArticuloArchivo.cpp" />
 		<Unit filename="ArticuloArchivo.h" />
+		<Unit filename="ArticuloMenu.cpp" />
+		<Unit filename="ArticuloMenu.h" />
 		<Unit filename="Cliente.cpp" />
 		<Unit filename="Cliente.h" />
 		<Unit filename="ClienteArchivo.cpp" />

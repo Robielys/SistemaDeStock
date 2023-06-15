@@ -1,9 +1,10 @@
 #include <string>
+#include <iostream>
 using namespace std;
 #include "ClienteMenu.h"
 #include "ClienteArchivo.h"
 #include "Cliente.h"
-#include <iostream>
+
 
 
 void ClienteMenu::Listar()

@@ -27,6 +27,7 @@ void ProgramaPrincipal::Ejecutar()
             MenuCliente.mostrar();
             break;
         case 3:
+            MenuArticulo.Mostrar();
             break;
         case 0:
             cout<<endl;
