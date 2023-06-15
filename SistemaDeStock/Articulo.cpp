@@ -6,7 +6,6 @@ using namespace std;
 
 void Articulo::setID(int ID)
 {
-    ArticuloArchivo CanArt;
     _ID =ID;
 }
 void Articulo::setCategoria(string Categoria)
@@ -83,7 +82,7 @@ bool Articulo::getEstado()
 
 void Articulo::Cargar()
 {
-    ArchivoArticulo reg;
+    ArticuloArchivo reg;
     int validar=0;
     cout << "Ingresar Categoria: ";
     cin >> _Categoria;

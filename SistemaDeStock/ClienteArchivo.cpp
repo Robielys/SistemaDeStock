@@ -5,7 +5,7 @@ using namespace std;
 #include"Cliente.h"
 
 
-ClienteArchivo::CrearID()
+int ClienteArchivo::CrearID()
 {
     return getCantidad() + 1;
 

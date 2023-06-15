@@ -2,9 +2,10 @@
 #define ARTICULOARCHIVO_H
 #include "Articulo.h"
 
-class ArchivoArticulo{
+class ArticuloArchivo
+{
 public:
-    void Listar(Articulo* art, int nroRegistro);
+    void Listar(Articulo *Art, int nroRegistro);
     Articulo BuscarArt(int nroID);
     bool guardar(Articulo art);
     bool guardarModificacion(Articulo art, int posicion);
@@ -13,7 +14,6 @@ public:
     bool baja(int pos);
     int getCantidad();
     int CrearID();
-
-
 };
+
 #endif // ARTICULOARCHIVO_H

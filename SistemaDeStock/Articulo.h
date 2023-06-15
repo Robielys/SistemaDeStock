@@ -1,11 +1,10 @@
 #ifndef ARTICULO_H
 #define ARTICULO_H
-#include <cstring>
-#include<string>
-#include "ArticuloArchivo.h"
-
+#include <string>
 using namespace std;
-class Articulo{
+
+class Articulo
+{
 private:
     int _ID;
     char _Categoria[50];
@@ -40,6 +39,7 @@ public:
     void Mostrar2(int cant, int Aumentar);
     void Mostrar3(int Aumentar);
     bool modificar();
+
 };
 
 #endif // ARTICULO_H
