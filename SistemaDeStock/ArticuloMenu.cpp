@@ -172,12 +172,16 @@ void ArticuloMenu::Mostrar()
         {
 
         case 1:
+            Listar();
             break;
         case 2:
+            guardar();
             break;
         case 3:
+            baja();
             break;
         case 4:
+            editar();
             break;
         }
     }

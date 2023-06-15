@@ -3,7 +3,7 @@
 	<iostream>
 	"ProgramaPrincipal.h"
 
-1686232697 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\cliente.cpp
+1686856488 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\cliente.cpp
 	<iostream>
 	<string.h>
 	"Cliente.h"
@@ -11,7 +11,7 @@
 1686232697 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\cliente.h
 	<string>
 
-1686855027 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientearchivo.cpp
+1686856871 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\clientearchivo.cpp
 	"ClienteArchivo.h"
 	<iostream>
 	"Cliente.h"
@@ -101,20 +101,20 @@
 	"Articulo.h"
 	"ArticuloArchivo.h"
 
-1686852911 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\articulo.h
+1686857209 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\articulo.h
 	<string>
 
 1686852911 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\articuloarchivo.h
 	"Articulo.h"
 
-1686852911 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\articuloarchivo.cpp
+1686857056 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\articuloarchivo.cpp
 	"ArticuloArchivo.h"
 	<iostream>
 	"Articulo.h"
 
 1686852911 c:\users\comercialf\documents\github\sistemadestock\sistemadestock\articulomenu.h
 
-1686853844 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\articulomenu.cpp
+1686857056 source:c:\users\comercialf\documents\github\sistemadestock\sistemadestock\articulomenu.cpp
 	<string>
 	<iostream>
 	"ArticuloMenu.h"

@@ -8,7 +8,7 @@ class Articulo
 private:
     int _ID;
     char _Categoria[50];
-    char _Modelo[50];
+    char _Modelo[6];
     char _TipoDeMaterial[50];
     int _Capacidad;
     int _Diametro;

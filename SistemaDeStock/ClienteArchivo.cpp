@@ -42,13 +42,13 @@ Cliente ClienteArchivo::BuscarCliente(int nroID)
 bool ClienteArchivo::guardar(Cliente cli)
 {
 
-    cli.setID(CrearID());
     FILE* pFile;
     pFile = fopen("Clientes.dat","ab");
     if (pFile == NULL)
     {
         return false;
     }
+    cli.setID(CrearID());
     fwrite(&cli, sizeof(Cliente), 1, pFile);
     fclose(pFile);
     return true;
@@ -95,7 +95,7 @@ int ClienteArchivo::getCantidad()
     FILE* pFile = fopen("Clientes.dat","rb");
     if(pFile == nullptr)
     {
-        pFile=fopen("Clientes.dat","wb");
+        ///pFile=fopen("Clientes.dat","wb");
         cout<< "No existe archivo y se creo uno nuevo";
     }
 

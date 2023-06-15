@@ -37,13 +37,13 @@ Articulo ArticuloArchivo::BuscarArt(int nroID)
 }
 bool ArticuloArchivo::guardar(Articulo art)
 {
-    art.setID(CrearID());
     FILE* pFile;
     pFile = fopen("Articulos.dat", "ab");
     if (pFile == NULL)
     {
         return false;
     }
+    art.setID(CrearID());
     fwrite(&art, sizeof(Articulo), 1, pFile);
     fclose(pFile);
     return true;
