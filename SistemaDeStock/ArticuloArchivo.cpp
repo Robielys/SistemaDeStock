@@ -1,5 +1,7 @@
 #include "ArticuloArchivo.h"
 #include<iostream>
+#include <cstdlib>
+#include <cstring>
 using namespace std;
 
 #include "Articulo.h"
@@ -71,7 +73,7 @@ int ArticuloArchivo::buscar(int ID)
     }
     return -1;
 }
-bool ArticuloArchivo::buscar1(string ID)
+bool ArticuloArchivo::buscar1(const char *ID)
 {
     int i = 0;
     Articulo aux;
@@ -81,15 +83,14 @@ bool ArticuloArchivo::buscar1(string ID)
     {
         exit(1);
     }
-    while(fread(&aux,sizeof(Articulo),1,pFile)==1)
+   /* while(fread(&aux,sizeof(Articulo),1,pFile)==1)
     {
-        if (aux.getModelo() == ID)
+        if (strcmp(aux.getModelo(),ID)==0)
         {
-            fclose(pFile);
             return true;
         }
         i++;
-    }
+    }*/
     return false;
 }
 

@@ -86,19 +86,8 @@ void Articulo::Cargar()
     int validar=0;
     cout << "Ingresar Categoria: ";
     cin >> _Categoria;
-    while(validar==0)
-    {
-        cout << "Ingresar Modelo: ";
-        cin >> _Modelo;
-        if(reg.buscar1(_Modelo))
-        {
-            cout << "este modelo ya existe"<<endl;
-        }
-        else
-        {
-            validar=1;
-        }
-    }
+    cout << "Ingresar Modelo: ";
+    cin >> _Modelo;
     cout << "Ingresar Tipo de Material: ";
     cin >> _TipoDeMaterial;
     cout << "Ingresar Capacidad: ";

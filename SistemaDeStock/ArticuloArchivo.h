@@ -10,7 +10,7 @@ public:
     bool guardar(Articulo art);
     bool guardarModificacion(Articulo art, int posicion);
     int buscar(int ID);
-    bool buscar1(string ID);
+    bool buscar1(const char *ID);
     bool baja(int pos);
     int getCantidad();
     int CrearID();
