@@ -61,6 +61,9 @@ void Cliente::Mostrar()
 {
     if(_Estado == true)
     {
+        cout<<_NombreEmpresa<<endl;
+        cout<<_Cuit<<endl;
+        cout<<_Correo<<endl;
     }
 
 }

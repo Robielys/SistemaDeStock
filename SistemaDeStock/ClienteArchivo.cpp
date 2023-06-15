@@ -69,7 +69,6 @@ bool ClienteArchivo::guardarModificacion(Cliente cliente, int posicion)
 }
 int ClienteArchivo::buscar(int ID)
 {
-
     int i = 0;
     Cliente cli;
     FILE* pFile;
@@ -96,8 +95,8 @@ int ClienteArchivo::getCantidad()
     FILE* pFile = fopen("Clientes.dat","rb");
     if(pFile == nullptr)
     {
-        cout<< "No existe archivo";
-        exit(1);
+        pFile=fopen("Clientes.dat","wb");
+        cout<< "No existe archivo y se creo uno nuevo";
     }
 
     fseek(pFile,0,SEEK_END);
