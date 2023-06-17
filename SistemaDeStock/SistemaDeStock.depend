@@ -130,3 +130,22 @@
 	"ArticuloArchivo.h"
 	"Articulo.h"
 
+1687039550 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\fecha.cpp
+	<iostream>
+	"Fecha.h"
+	<ctime>
+
+1687038830 c:\users\agnostic\documents\github\sistemadestock\sistemadestock\fecha.h
+	<string>
+
+1687043148 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\muestra.cpp
+	"Muestra.h"
+	"Fecha.h"
+	<iostream>
+	<cstring>
+
+1687042872 c:\users\agnostic\documents\github\sistemadestock\sistemadestock\muestra.h
+	"ArticuloArchivo.h"
+	"ClienteArchivo.h"
+	"Fecha.h"
+

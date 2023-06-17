@@ -9,7 +9,6 @@ Fecha::Fecha (int dia, int mes, int anio){
 _Dia=dia;
 _Mes=mes;
 _Anio=anio;
-
 }
 Fecha::Fecha (){
 time_t rawtime;
