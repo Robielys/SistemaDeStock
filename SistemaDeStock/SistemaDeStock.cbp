@@ -48,6 +48,8 @@
 		<Unit filename="ClienteArchivo.h" />
 		<Unit filename="ClienteMenu.cpp" />
 		<Unit filename="ClienteMenu.h" />
+		<Unit filename="Fecha.cpp" />
+		<Unit filename="Fecha.h" />
 		<Unit filename="ProgramaPrincipal.cpp" />
 		<Unit filename="ProgramaPrincipal.h" />
 		<Unit filename="include/ArticuloArchivo.h" />
