@@ -130,6 +130,8 @@
 	"ArticuloArchivo.h"
 	"Articulo.h"
 
+1686857845 ated upstream
+
 1687039550 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\fecha.cpp
 	<iostream>
 	"Fecha.h"
@@ -148,4 +150,108 @@
 	"ArticuloArchivo.h"
 	"ClienteArchivo.h"
 	"Fecha.h"
+
+1687042872 
+
+1687042846 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articulo.cpp
+	<iostream>
+	<string.h>
+	"Articulo.h"
+	"ArticuloArchivo.h"
+
+1687042846 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articulo.h
+	<string>
+
+1687042846 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articuloarchivo.h
+	"Articulo.h"
+
+1687042846 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articuloarchivo.cpp
+	"ArticuloArchivo.h"
+	<iostream>
+	<cstdlib>
+	<cstring>
+	"Articulo.h"
+
+1687042846 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articulomenu.cpp
+	<string>
+	<iostream>
+	"ArticuloMenu.h"
+	"ArticuloArchivo.h"
+	"Articulo.h"
+
+1687042846 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articulomenu.h
+
+1687042846 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\cliente.cpp
+	<iostream>
+	<string.h>
+	"Cliente.h"
+
+1686259424 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\cliente.h
+	<string>
+
+1687042846 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\clientearchivo.cpp
+	"ClienteArchivo.h"
+	<iostream>
+	"Cliente.h"
+
+1686259424 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\clientearchivo.h
+	"Cliente.h"
+
+1687042846 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\clientemenu.cpp
+	<string>
+	<iostream>
+	"ClienteMenu.h"
+	"ClienteArchivo.h"
+	"Cliente.h"
+
+1686259424 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\clientemenu.h
+
+1687047459 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\fecha.cpp
+	<iostream>
+	"Fecha.h"
+	<ctime>
+
+1687042846 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\fecha.h
+	<string>
+
+1687042846 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\main.cpp
+	<iostream>
+	"ProgramaPrincipal.h"
+
+1687042846 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\programaprincipal.h
+	"ClienteMenu.h"
+	"ArticuloMenu.h"
+
+1687042846 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\programaprincipal.cpp
+	<iostream>
+	"ProgramaPrincipal.h"
+
+1687042846 shed changes
+
+1687047468 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\detalledemuestra.cpp
+	"DetalleDeMuestra.h"
+	<string>
+	<cstring>
+
+1687047468 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\detalledemuestra.h
+	<string>
+
+1687047459 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestra.cpp
+	"Muestra.h"
+	"Fecha.h"
+	<iostream>
+	<cstring>
+
+1687047459 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestra.h
+	"ArticuloArchivo.h"
+	"ClienteArchivo.h"
+	"Fecha.h"
+
+1687047459 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestraarchivo.cpp
+	<iostream>
+	"Muestra.h"
+	"MuestraArchivo.h"
+
+1687047459 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestraarchivo.h
+	"Muestra.h"
 
