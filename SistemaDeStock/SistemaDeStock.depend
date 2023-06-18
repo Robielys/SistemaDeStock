@@ -228,12 +228,12 @@
 
 1687042846 shed changes
 
-1687047468 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\detalledemuestra.cpp
+1687048373 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\detalledemuestra.cpp
 	"DetalleDeMuestra.h"
 	<string>
 	<cstring>
 
-1687047468 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\detalledemuestra.h
+1687048373 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\detalledemuestra.h
 	<string>
 
 1687047459 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestra.cpp
@@ -270,4 +270,11 @@
 
 1687048082 c:\users\agnostic\documents\github\sistemadestock\sistemadestock\detalledemuestra.h
 	<string>
+
+1687051209 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\detalledemuestraarchivo.cpp
+	"DetalleDeMuestraArchivo.h"
+	"DetalleDeMuestra.h"
+
+1687051209 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\detalledemuestraarchivo.h
+	"DetalleDeMuestra.h"
 
