@@ -70,6 +70,26 @@ do{
 
 }
 void MuestraMenu::ListarDetalle(){
+    DetalleDeMuestraArchivo archivoDetalle;
+    MuestraArchivo archivoMuestra;
+    int CantidadMuestraDetalle= archivoDetalle.CantidadRegistros();
+    int CantidadMuestra= archivoMuestra.getCantidad();
+    Muestra *muestra = new Muestra[CantidadMuestra];
+    archivoMuestra.listar(muestra,CantidadMuestra);
+
+    for(int i=0; i<CantidadMuestra; i++){
+        muestra[i].mostrar();
+    }
+    int Numero;
+    cout << "¿Cual numero de muestra desea ver?";
+    cin >> Numero;
+    for(int x=0;x<CantidadMuestraDetalle; x++){
+        DetalleDeMuestra obj=archivoDetalle.Leer(x);
+        if(obj.getIDmuestra()==Numero){
+            obj.mostrar();
+
+        }
+    }
 }
 void MuestraMenu::Mostrar()
 {

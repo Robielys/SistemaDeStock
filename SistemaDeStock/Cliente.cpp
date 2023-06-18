@@ -1,8 +1,10 @@
 #include<iostream>
 #include<string.h>
+#include<cstring>
+#include <istream>
 using namespace std;
 #include "Cliente.h"
-
+#include "Funciones.h"
 
 void Cliente::setID(int id)
 {
@@ -13,9 +15,9 @@ void Cliente::setNombreEmpresa(string NombreEmpresa)
 {
     strcpy(_NombreEmpresa, NombreEmpresa.c_str());
 }
-void Cliente::setCuit(long Cuit)
+void Cliente::setCuit(double Cuit)
 {
-    Cuit = Cuit;
+    _Cuit = Cuit;
 }
 void Cliente::setCorreo(string Correo)
 {
@@ -34,7 +36,7 @@ string Cliente::getNombreEmpresa()
 {
     return _NombreEmpresa;
 }
-long Cliente::getCuit()
+double Cliente::getCuit()
 {
     return _Cuit;
 }
@@ -49,10 +51,11 @@ bool Cliente::getEstado()
 
 void Cliente::Cargar()
 {
+    int validar=0;
     cout << "Ingresar Nombre de Empresa: ";
     cin >> _NombreEmpresa;
     cout << "Ingresar Cuit: ";
-    cin >> _Cuit;
+    cin>>_Cuit;
     cout << "Ingresar Correo: ";
     cin >> _Correo;
     _Estado = true;

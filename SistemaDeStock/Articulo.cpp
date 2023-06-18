@@ -103,6 +103,7 @@ void Articulo::Mostrar(int Aumentar)
 {
     if(_Estado == true)
     {
+         cout << _ID<<"  "<< _Categoria<<"  " << _Modelo<<"  "<< _Capacidad<<"  " << _Diametro<<"  " << _Stock<<endl;
        /* rlutil::locate(2,Aumentar);
         cout << "|";
         rlutil::locate(4,Aumentar);

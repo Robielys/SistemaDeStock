@@ -17,6 +17,7 @@ void ArticuloMenu::Listar()
     for(int i=0; i<cantidad; i++)
     {
         Art[i].Mostrar(Aumentar);
+        cout<<endl;
         Aumentar++;
     }
     delete[] Art;
@@ -25,7 +26,9 @@ void ArticuloMenu::Listar()
 }
 void ArticuloMenu::guardar()
 {
-    Articulo Art;
+    int Numero;
+    do{
+        Articulo Art;
     ArticuloArchivo CarArt;
     Art.Cargar();
     if(CarArt.guardar(Art))
@@ -36,8 +39,12 @@ void ArticuloMenu::guardar()
     {
         cout << "No se pudo guardar el articulo" << endl;
     }
+    cout<< "SI DESEA TERMINAR LA CARGA INGRESE 0 ";
+    cin>> Numero;
 
     system("pause");
+    }while(Numero!=0);
+
 }
 
 void ArticuloMenu::baja()

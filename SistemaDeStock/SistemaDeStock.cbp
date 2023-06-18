@@ -54,6 +54,8 @@
 		<Unit filename="DetalleDeMuestraArchivo.h" />
 		<Unit filename="Fecha.cpp" />
 		<Unit filename="Fecha.h" />
+		<Unit filename="Funciones.cpp" />
+		<Unit filename="Funciones.h" />
 		<Unit filename="Muestra.cpp" />
 		<Unit filename="Muestra.h" />
 		<Unit filename="MuestraArchivo.cpp" />

@@ -9,7 +9,7 @@ using namespace std;
 
 int ArticuloArchivo::CrearID()
 {
-    return getCantidad() + 1;
+    return getCantidad() + 100;
 }
 void ArticuloArchivo::Listar(Articulo* art, int nroRegistro)
 {

@@ -7,18 +7,18 @@ class Cliente{
 private:
     int _ID;
     char _NombreEmpresa[50];
-    long _Cuit;
+    double _Cuit;
     char _Correo[50];
     bool _Estado;
 public:
     void setID(int id);
     void setNombreEmpresa(string NombreEmpresa);
-    void setCuit(long Cuit);
+    void setCuit(double Cuit);
     void setCorreo(string Correo);
     void setEstado(bool Estado);
     int getID();
     string getNombreEmpresa();
-    long getCuit();
+    double getCuit();
     string getCorreo();
     bool getEstado();
     void Cargar();
