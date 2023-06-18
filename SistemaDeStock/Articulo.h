@@ -22,7 +22,7 @@ public:
     void setCapacidad(int Capacidad);
     void setDiametro(int Diametro);
     void setStock(int Stock);
-    void descontarStock(int stock);
+    int descontarStock(int stock);
     void setEstado(bool Estado);
 
     int getID();

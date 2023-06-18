@@ -13,7 +13,6 @@ private:
 public:
     void setID(int id);
     void setNombreCliente(string NombreCliente);
-    void setNombCliente(Cliente NombreCliente);
     int getID();
     Fecha getFecha();
     void setFecha(Fecha aux);

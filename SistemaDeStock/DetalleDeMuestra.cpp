@@ -2,6 +2,8 @@
 #include <string>
 #include <cstring>
 using namespace std;
+#include <iostream>
+
 
 void DetalleDeMuestra::setIDmuestra(int idmuestra)
 {
@@ -70,6 +72,8 @@ int DetalleDeMuestra::getStock()
     return _Stock;
 }
 
-void mostrar(){}
+void DetalleDeMuestra:: mostrar(){
+cout<<"muestra";
+}
 
 

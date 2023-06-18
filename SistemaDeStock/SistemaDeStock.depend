@@ -153,13 +153,13 @@
 
 1687042872 
 
-1687042846 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articulo.cpp
+1687102031 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articulo.cpp
 	<iostream>
 	<string.h>
 	"Articulo.h"
 	"ArticuloArchivo.h"
 
-1687042846 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articulo.h
+1687102031 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articulo.h
 	<string>
 
 1687042846 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articuloarchivo.h
@@ -242,7 +242,7 @@
 	<iostream>
 	<cstring>
 
-1687047459 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestra.h
+1687058419 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestra.h
 	"ArticuloArchivo.h"
 	"ClienteArchivo.h"
 	"Fecha.h"
@@ -284,4 +284,20 @@
 
 1687051775 c:\users\agnostic\documents\github\sistemadestock\sistemadestock\detalledemuestraarchivo.h
 	"DetalleDeMuestra.h"
+
+1687101814 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestramenu.cpp
+	<string>
+	<iostream>
+	"Muestra.h"
+	"DetalleDeMuestra.h"
+	"MuestraArchivo.h"
+	"DetalleDeMuestraArchivo.h"
+	"MuestraMenu.h"
+	"Articulo.h"
+	"ArticuloArchivo.h"
+	"Cliente.h"
+	"ClienteArchivo.h"
+	"Fecha.h"
+
+1687053747 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestramenu.h
 

@@ -62,7 +62,6 @@
 		<Unit filename="MuestraMenu.h" />
 		<Unit filename="ProgramaPrincipal.cpp" />
 		<Unit filename="ProgramaPrincipal.h" />
-		<Unit filename="include/ArticuloArchivo.h" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<lib_finder disable_auto="1" />

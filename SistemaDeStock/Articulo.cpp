@@ -34,9 +34,10 @@ void Articulo::setStock(int Stock)
     _Stock += Stock;
     }
 }
-void Articulo::descontarStock(int stock){
+int Articulo::descontarStock(int stock){
     if(_Stock >= stock){
         _Stock -= stock;
+        return stock;
     }else{
         cout << "Cantidad ingresada es mayor al stock disponible"<< endl;
         cout << "Ingrese una cantidad menor o igual al Stock disponible"<< endl;
