@@ -70,7 +70,6 @@ int DetalleDeMuestra::getStock()
     return _Stock;
 }
 
-void guardar() {}
-void mostrar() {}
-void modificar() {}
+void mostrar(){}
+
 

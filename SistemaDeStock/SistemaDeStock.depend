@@ -255,3 +255,19 @@
 1687047459 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestraarchivo.h
 	"Muestra.h"
 
+1687044069 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\muestraarchivo.cpp
+	<iostream>
+	"Muestra.h"
+	"MuestraArchivo.h"
+
+1687043428 c:\users\agnostic\documents\github\sistemadestock\sistemadestock\muestraarchivo.h
+	"Muestra.h"
+
+1687047960 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\detalledemuestra.cpp
+	"DetalleDeMuestra.h"
+	<string>
+	<cstring>
+
+1687048082 c:\users\agnostic\documents\github\sistemadestock\sistemadestock\detalledemuestra.h
+	<string>
+

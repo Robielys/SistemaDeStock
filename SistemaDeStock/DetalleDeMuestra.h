@@ -6,7 +6,6 @@ using namespace std;
 
 class DetalleDeMuestra
 {
-
     private:
         int _IDmuestra;
         int _IDproducto;
@@ -37,10 +36,7 @@ class DetalleDeMuestra
         int getDiametro();
         int getStock();
 
-        void guardar();
         void mostrar();
-
-
 };
 
 #endif // DETALLEDEMUESTRA_H
