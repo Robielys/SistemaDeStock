@@ -58,6 +58,8 @@
 		<Unit filename="Muestra.h" />
 		<Unit filename="MuestraArchivo.cpp" />
 		<Unit filename="MuestraArchivo.h" />
+		<Unit filename="MuestraMenu.cpp" />
+		<Unit filename="MuestraMenu.h" />
 		<Unit filename="ProgramaPrincipal.cpp" />
 		<Unit filename="ProgramaPrincipal.h" />
 		<Unit filename="include/ArticuloArchivo.h" />
