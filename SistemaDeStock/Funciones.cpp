@@ -3,6 +3,8 @@ using namespace std;
 #include "Funciones.h"
 #include "Articulo.h"
 #include "ArticuloArchivo.h"
+#include "Cliente.h"
+#include "ClienteArchivo.h"
 
 
 bool ValidarCuit(int cuit)
@@ -12,6 +14,16 @@ bool ValidarCuit(int cuit)
         cout<<"Cuit invalido";
         cout<<endl;
         return true;
+    }
+    Cliente cliente;
+    ClienteArchivo archivoC;
+    int cantidad= archivoC.getCantidad();
+    for(int i=0; i<cantidad; i++){
+        cliente=archivoC.BuscarCliente(i);
+        if(cliente.getCuit()== cuit){
+            cout<<"Este CUIT ya existe"<< endl;
+            return true
+        }
     }
     return false;
 }
@@ -30,5 +42,6 @@ for(int x =0; x<cantidad;x++){
 }
 return false;
 }
+
 
 
