@@ -20,18 +20,18 @@ class DetalleDeMuestra
 
         void setIDmuestra(int idmuestra);
         void setIDproducto(int idproducto);
-        void  setCategoria( string categoria);
-        void  setModelo(string modelo);
-        void  setTipoDeMaterial(string tipoDematerial);
+        void setCategoria(const char *categoria);
+        void setModelo(const char *modelo);
+        void setTipoDeMaterial(const char *tipoDematerial);
         void setCapacidad(int capacidad);
         void setDiametro(int diametro);
         void setStock(int stock);
 
         int getIDmuestra();
         int getIDproducto();
-        string getCategoria();
-        string getModelo();
-        string getTipoDeMaterial();
+        const char* getCategoria();
+        const char* getModelo();
+        const char* getTipoDeMaterial();
         int getCapacidad();
         int getDiametro();
         int getStock();

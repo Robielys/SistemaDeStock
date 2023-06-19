@@ -54,9 +54,10 @@ void Cliente::Cargar()
     int validar=0;
     cout << "Ingresar Nombre de Empresa: ";
     cin >> _NombreEmpresa;
+    do{
     cout << "Ingresar Cuit: ";
     cin>>_Cuit;
-    ValidarCuit(_Cuit);
+    }while(ValidarCuit(_Cuit)==true);
     cout << "Ingresar Correo: ";
     cin >> _Correo;
     _Estado = true;
@@ -65,7 +66,7 @@ void Cliente::Mostrar()
 {
     if(_Estado == true)
     {
-        cout<<_NombreEmpresa<< " " <<_Cuit<< " "<<_Correo<<endl;
+        cout<<_ID<<" "<<_NombreEmpresa<< " " <<_Cuit<< " "<<_Correo<<endl;
     }
 
 }

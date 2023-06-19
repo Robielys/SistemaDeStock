@@ -3,4 +3,5 @@
 
 
  bool ValidarCuit(int cuit);
+ bool ValidarModelo(const char *modelo);
 #endif // FUNCIONES_H

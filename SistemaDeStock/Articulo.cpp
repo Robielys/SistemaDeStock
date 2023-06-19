@@ -3,22 +3,23 @@
 using namespace std;
 #include "Articulo.h"
 #include "ArticuloArchivo.h"
+#include "Funciones.h"
 
 void Articulo::setID(int ID)
 {
     _ID =ID;
 }
-void Articulo::setCategoria(string Categoria)
+void Articulo::setCategoria(const char* Categoria)
 {
-    strcpy(_Categoria, Categoria.c_str());
+    strcpy(_Categoria, Categoria);
 }
-void Articulo::setModelo(string Modelo)
+void Articulo::setModelo(const char* Modelo)
 {
-    strcpy(_Modelo, Modelo.c_str());
+    strcpy(_Modelo, Modelo);
 }
-void Articulo::setTipoDeMaterial(string TipoDeMaterial)
+void Articulo::setTipoDeMaterial(const char* TipoDeMaterial)
 {
-    strcpy(_TipoDeMaterial, TipoDeMaterial.c_str());
+    strcpy(_TipoDeMaterial, TipoDeMaterial);
 }
 void Articulo::setCapacidad(int Capacidad)
 {
@@ -30,19 +31,40 @@ void Articulo::setDiametro(int Diametro)
 }
 void Articulo::setStock(int Stock)
 {
-    if(Stock > 0){
-    _Stock += Stock;
+    if(Stock > 0)
+    {
+        _Stock += Stock;
     }
 }
-int Articulo::descontarStock(int stock){
-    if(_Stock >= stock){
-        _Stock -= stock;
-        return stock;
-    }else{
-        cout << "Cantidad ingresada es mayor al stock disponible"<< endl;
-        cout << "Ingrese una cantidad menor o igual al Stock disponible"<< endl;
-        cout << "El stock disponible es: " << _Stock << endl;
-    }
+int Articulo::descontarStock(int stock)
+{
+    if(stock<= _Stock)
+        {
+            _Stock -= stock;
+            return stock;
+        }
+        else
+        {
+            cout << "Cantidad ingresada es mayor al stock disponible"<< endl;
+            cout << "Ingrese una cantidad menor o igual al Stock disponible"<< endl;
+            cout << "El stock disponible es: " << _Stock << endl;
+        }
+   /* int validar=0;
+    while(validar==0)
+    {
+        if(_Stock >= stock)
+        {
+            _Stock -= stock;
+            validar=1;
+            return stock;
+        }
+        else
+        {
+            cout << "Cantidad ingresada es mayor al stock disponible"<< endl;
+            cout << "Ingrese una cantidad menor o igual al Stock disponible"<< endl;
+            cout << "El stock disponible es: " << _Stock << endl;
+        }
+    }*/
 }
 void Articulo::setEstado(bool Estado)
 {
@@ -52,15 +74,15 @@ int Articulo::getID()
 {
     return _ID;
 }
-string Articulo::getCategoria()
+const char* Articulo::getCategoria()
 {
     return _Categoria;
 }
-string Articulo::getModelo()
+const char* Articulo::getModelo()
 {
     return _Modelo;
 }
-string Articulo::getTipoDeMaterial()
+const char* Articulo::getTipoDeMaterial()
 {
     return _TipoDeMaterial;
 }
@@ -87,8 +109,10 @@ void Articulo::Cargar()
     int validar=0;
     cout << "Ingresar Categoria: ";
     cin >> _Categoria;
+    do{
     cout << "Ingresar Modelo: ";
     cin >> _Modelo;
+    }while(ValidarModelo(_Modelo)==true);
     cout << "Ingresar Tipo de Material: ";
     cin >> _TipoDeMaterial;
     cout << "Ingresar Capacidad: ";
@@ -103,37 +127,37 @@ void Articulo::Mostrar(int Aumentar)
 {
     if(_Estado == true)
     {
-         cout << _ID<<"  "<< _Categoria<<"  " << _Modelo<<"  "<< _Capacidad<<"  " << _Diametro<<"  " << _Stock<<endl;
-       /* rlutil::locate(2,Aumentar);
-        cout << "|";
-        rlutil::locate(4,Aumentar);
-        cout << _ID;
-        rlutil::locate(7,Aumentar);
-        cout << "|";
-        rlutil::locate(10,Aumentar);
-        cout << _Categoria;
-        rlutil::locate(19,Aumentar);
-        cout << "|";
-        rlutil::locate(22,Aumentar);
-        cout << _Modelo;
-        rlutil::locate(28,Aumentar);
-        cout << "|";
-        rlutil::locate(31,Aumentar);
-        cout << _TipoDeMaterial;
-        rlutil::locate(39,Aumentar);
-        cout << "|";
-        rlutil::locate(43,Aumentar);
-        cout << _Capacidad;
-        rlutil::locate(51,Aumentar);
-        cout << "|";
-        rlutil::locate(54,Aumentar);
-        cout << _Diametro;
-        rlutil::locate(62,Aumentar);
-        cout << "|";
-        rlutil::locate(65,Aumentar);
-        cout << _Stock;
-        rlutil::locate(69,Aumentar);
-        cout << "|" << endl;*/
+        cout << _ID<<"  "<< _Categoria<<"  " << _Modelo<<"  "<< _Capacidad<<"  " << _Diametro<<"  " << _Stock<<endl;
+        /* rlutil::locate(2,Aumentar);
+         cout << "|";
+         rlutil::locate(4,Aumentar);
+         cout << _ID;
+         rlutil::locate(7,Aumentar);
+         cout << "|";
+         rlutil::locate(10,Aumentar);
+         cout << _Categoria;
+         rlutil::locate(19,Aumentar);
+         cout << "|";
+         rlutil::locate(22,Aumentar);
+         cout << _Modelo;
+         rlutil::locate(28,Aumentar);
+         cout << "|";
+         rlutil::locate(31,Aumentar);
+         cout << _TipoDeMaterial;
+         rlutil::locate(39,Aumentar);
+         cout << "|";
+         rlutil::locate(43,Aumentar);
+         cout << _Capacidad;
+         rlutil::locate(51,Aumentar);
+         cout << "|";
+         rlutil::locate(54,Aumentar);
+         cout << _Diametro;
+         rlutil::locate(62,Aumentar);
+         cout << "|";
+         rlutil::locate(65,Aumentar);
+         cout << _Stock;
+         rlutil::locate(69,Aumentar);
+         cout << "|" << endl;*/
     }
 }
 
@@ -141,55 +165,58 @@ void Articulo::Mostrar2(int cant, int Aumentar)
 {
     if(_Estado == true)
     {
-       /*  rlutil::locate(2,Aumentar);
-        cout << "|";
-        rlutil::locate(4,Aumentar);
-        cout << _ID;
-        rlutil::locate(7,Aumentar);
-        cout << "|";
-        rlutil::locate(10,Aumentar);
-        cout << _Categoria;
-        rlutil::locate(19,Aumentar);
-        cout << "|";
-        rlutil::locate(22,Aumentar);
-        cout << _Modelo;
-        rlutil::locate(28,Aumentar);
-        cout << "|";
-        rlutil::locate(31,Aumentar);
-        cout << _TipoDeMaterial;
-        rlutil::locate(39,Aumentar);
-        cout << "|";
-        rlutil::locate(43,Aumentar);
-        cout << _Capacidad;
-        rlutil::locate(51,Aumentar);
-        cout << "|";
-        rlutil::locate(54,Aumentar);
-        cout << _Diametro;
-        rlutil::locate(62,Aumentar);
-        cout << "|";
-        rlutil::locate(65,Aumentar);
-        cout << cant;
-        rlutil::locate(72,Aumentar);
-        cout << "|" << endl;*/
+        /*  rlutil::locate(2,Aumentar);
+         cout << "|";
+         rlutil::locate(4,Aumentar);
+         cout << _ID;
+         rlutil::locate(7,Aumentar);
+         cout << "|";
+         rlutil::locate(10,Aumentar);
+         cout << _Categoria;
+         rlutil::locate(19,Aumentar);
+         cout << "|";
+         rlutil::locate(22,Aumentar);
+         cout << _Modelo;
+         rlutil::locate(28,Aumentar);
+         cout << "|";
+         rlutil::locate(31,Aumentar);
+         cout << _TipoDeMaterial;
+         rlutil::locate(39,Aumentar);
+         cout << "|";
+         rlutil::locate(43,Aumentar);
+         cout << _Capacidad;
+         rlutil::locate(51,Aumentar);
+         cout << "|";
+         rlutil::locate(54,Aumentar);
+         cout << _Diametro;
+         rlutil::locate(62,Aumentar);
+         cout << "|";
+         rlutil::locate(65,Aumentar);
+         cout << cant;
+         rlutil::locate(72,Aumentar);
+         cout << "|" << endl;*/
 
     }
 }
-void Articulo::Mostrar3(int Aumentar){
-    if(_Estado==true){
+void Articulo::Mostrar3(int Aumentar)
+{
+    if(_Estado==true)
+    {
 
-      /*  rlutil::locate(2,Aumentar);
-        cout << "|";
-        rlutil::locate(4,Aumentar);
-        cout << _Categoria;
-        rlutil::locate(15,Aumentar);
-        cout << "|";
-        rlutil::locate(22,Aumentar);
-        cout << _Modelo;
-        rlutil::locate(28,Aumentar);
-        cout << "|"<< endl;*/
+        /*  rlutil::locate(2,Aumentar);
+          cout << "|";
+          rlutil::locate(4,Aumentar);
+          cout << _Categoria;
+          rlutil::locate(15,Aumentar);
+          cout << "|";
+          rlutil::locate(22,Aumentar);
+          cout << _Modelo;
+          rlutil::locate(28,Aumentar);
+          cout << "|"<< endl;*/
     }
 }
-bool Articulo::modificar(){
+bool Articulo::modificar()
+{
     cout << "Ingresar Stock: ";
     cin >> _Stock;
 }

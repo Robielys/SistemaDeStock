@@ -3,7 +3,7 @@
 
 bool DetalleDeMuestraArchivo::Guardar(DetalleDeMuestra obj){
 FILE* pFile;
-pFile= fopen("DetallesDeMuestras", "ab");
+pFile= fopen("DetallesDeMuestras.dat", "ab");
 if (pFile==NULL){
     return false;
 }
@@ -15,7 +15,7 @@ return true;
 int DetalleDeMuestraArchivo::CantidadRegistros(){
     int cantidad =0;
     FILE* pFile;
-    pFile= fopen("DetallesDeMuestras", "ab");
+    pFile= fopen("DetallesDeMuestras.dat", "ab");
     if (pFile == NULL){
         return false;
     }
@@ -29,7 +29,7 @@ return cantidad;
 DetalleDeMuestra DetalleDeMuestraArchivo::Leer(int numero){
 DetalleDeMuestra obj;
 FILE* pFile;
-pFile=fopen("DetallesDeMuestras","rb");
+pFile=fopen("DetallesDeMuestras.dat","rb");
 if (pFile==NULL){
     return obj;
 }

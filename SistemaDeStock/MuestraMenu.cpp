@@ -12,20 +12,23 @@ using namespace std;
 #include "ClienteArchivo.h"
 #include "Fecha.h"
 
-void MuestraMenu::Listar(){
+void MuestraMenu::Listar()
+{
     MuestraArchivo archivo;
     int cantidad = archivo.getCantidad();
     Muestra* muestra = new Muestra[cantidad];
     archivo.listar(muestra, cantidad);
     /*int aumentar= 4;*/
-    for(int x=0; x<cantidad; x++){
+    for(int x=0; x<cantidad; x++)
+    {
 
         muestra[x].mostrar();
     }
     delete [] muestra;
     system("pause");
 }
-void MuestraMenu::guardar(){
+void MuestraMenu::guardar()
+{
     Fecha fecha;
     Muestra muestra;
     MuestraArchivo archivomuest;
@@ -33,43 +36,52 @@ void MuestraMenu::guardar(){
     ClienteArchivo archivocli;
     Articulo articulo;
     ArticuloArchivo archivoarticulo;
+    DetalleDeMuestra detalleM;
+    DetalleDeMuestraArchivo archivodetalle;
     int numCliente=0;
     int numMuestra=0;
     cout<<"Ingrese numero de cliente : "<< endl;
     cin>>numCliente;
-    cliente=archivocli.BuscarCliente(numCliente);
+    int posicion2=0;
+    posicion2=archivocli.buscar(numCliente);
+    cliente=archivocli.BuscarCliente(posicion2);
     muestra.setNombreCliente(cliente.getNombreEmpresa());
     muestra.setFecha(fecha);
     archivomuest.guardar(muestra);
 
 
     int codigoArticulo;
-do{
+    do
+    {
+        int posicion=0;
         int cantidad=0;
-    cout<<"Ingresar codigo de articulo: "<<endl;
-    cin>>codigoArticulo;
-    DetalleDeMuestra detalleM;
-    DetalleDeMuestraArchivo archivodetalle;
-    detalleM.setIDmuestra(muestra.getID());
-    articulo=archivoarticulo.BuscarArt(codigoArticulo);
-    detalleM.setCategoria(articulo.getCategoria());
-    detalleM.setModelo(articulo.getModelo());
-    detalleM.setCapacidad(articulo.getCapacidad());
-    detalleM.setDiametro(articulo.getDiametro());
-    detalleM.setIDproducto(articulo.getID());
-    detalleM.setTipoDeMaterial(articulo.getTipoDeMaterial());
-    cout<<"Ingresar la cantidad: "<<endl;
-    cin>>cantidad;
-    detalleM.setStock(articulo.descontarStock(cantidad));
-    archivodetalle.Guardar(detalleM);
-    detalleM.mostrar();
+        cout<<"Ingresar codigo de articulo: "<<endl;
+        cin>>codigoArticulo;
+        if(codigoArticulo>0)
+        {
+            detalleM.setIDmuestra(archivomuest.getCantidad());
+            posicion=archivoarticulo.buscar(codigoArticulo);
+            articulo=archivoarticulo.BuscarArt(posicion);
+            detalleM.setCategoria(articulo.getCategoria());
+            detalleM.setModelo(articulo.getModelo());
+            detalleM.setCapacidad(articulo.getCapacidad());
+            detalleM.setDiametro(articulo.getDiametro());
+            detalleM.setIDproducto(articulo.getID());
+            detalleM.setTipoDeMaterial(articulo.getTipoDeMaterial());
+            cout<<"Ingresar la cantidad: "<<endl;
+            cin>>cantidad;
+            articulo.descontarStock(cantidad);
+            detalleM.setStock(cantidad);
+            archivodetalle.Guardar(detalleM);
+            detalleM.mostrar();
+        }
 
-}while( codigoArticulo!=0);
-
-
+    }
+    while( codigoArticulo!=0);
 
 }
-void MuestraMenu::ListarDetalle(){
+void MuestraMenu::ListarDetalle()
+{
     DetalleDeMuestraArchivo archivoDetalle;
     MuestraArchivo archivoMuestra;
     int CantidadMuestraDetalle= archivoDetalle.CantidadRegistros();
@@ -77,18 +89,21 @@ void MuestraMenu::ListarDetalle(){
     Muestra *muestra = new Muestra[CantidadMuestra];
     archivoMuestra.listar(muestra,CantidadMuestra);
 
-    for(int i=0; i<CantidadMuestra; i++){
+    for(int i=0; i<CantidadMuestra; i++)
+    {
         muestra[i].mostrar();
     }
     int Numero;
     cout << "¿Cual numero de muestra desea ver?";
     cin >> Numero;
-    for(int x=0;x<CantidadMuestraDetalle; x++){
+    for(int x=0; x<CantidadMuestraDetalle; x++)
+    {
         DetalleDeMuestra obj=archivoDetalle.Leer(x);
-            obj.mostrar();
-        /*if(obj.getIDmuestra()==Numero){
 
-        }*/
+        if(obj.getIDmuestra()==Numero)
+        {
+            obj.mostrar();
+        }
     }
 }
 void MuestraMenu::Mostrar()
@@ -109,20 +124,21 @@ void MuestraMenu::Mostrar()
         switch(opcion)
         {
         case 1:
-                Listar();
+            Listar();
             break;
         case 2:
-            {
-                guardar();
-            }
-            break;
-        case 3:
-            {
-                ListarDetalle();
-            }
-            break;
+        {
+            guardar();
         }
-    }while(opcion!=0);
+        break;
+        case 3:
+        {
+            ListarDetalle();
+        }
+        break;
+        }
+    }
+    while(opcion!=0);
 
 }
 

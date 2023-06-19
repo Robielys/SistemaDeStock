@@ -16,9 +16,9 @@ private:
     bool _Estado;
 public:
     void setID(int ID);
-    void setCategoria(string Categoria);
-    void setModelo(string Modelo);
-    void setTipoDeMaterial(string TipoDeMaterial);
+    void setCategoria(const char* Categoria);
+    void setModelo(const char* Modelo);
+    void setTipoDeMaterial(const char* TipoDeMaterial);
     void setCapacidad(int Capacidad);
     void setDiametro(int Diametro);
     void setStock(int Stock);
@@ -26,9 +26,9 @@ public:
     void setEstado(bool Estado);
 
     int getID();
-    string getCategoria();
-    string getModelo();
-    string getTipoDeMaterial();
+    const char* getCategoria();
+    const char* getModelo();
+    const char* getTipoDeMaterial();
     int getCapacidad();
     int getDiametro();
     int getStock();

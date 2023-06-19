@@ -13,17 +13,18 @@ void DetalleDeMuestra::setIDproducto(int idproducto)
 {
     _IDproducto= idproducto;
 }
-void  DetalleDeMuestra::setCategoria( string categoria)
+void  DetalleDeMuestra::setCategoria(const char *categoria)
 {
-    strcpy(_Categoria, categoria.c_str());
+    strcpy(_Categoria,categoria);
+
 }
-void  DetalleDeMuestra::setModelo(string modelo)
+void  DetalleDeMuestra::setModelo(const char *modelo)
 {
-    strcpy(_Modelo, modelo.c_str());
+    strcpy(_Modelo, modelo);
 }
-void  DetalleDeMuestra::setTipoDeMaterial(string tipoDematerial)
+void  DetalleDeMuestra::setTipoDeMaterial(const char *tipoDematerial)
 {
-    strcpy(_TipoDeMaterial, tipoDematerial.c_str());
+    strcpy(_TipoDeMaterial,tipoDematerial);
 }
 void DetalleDeMuestra::setCapacidad(int capacidad)
 {
@@ -46,15 +47,15 @@ int DetalleDeMuestra::getIDproducto()
 {
     return _IDproducto;
 }
-string DetalleDeMuestra::getCategoria()
+const char* DetalleDeMuestra::getCategoria()
 {
     return _Categoria;
 }
-string DetalleDeMuestra::getModelo()
+const char* DetalleDeMuestra::getModelo()
 {
     return _Modelo;
 }
-string DetalleDeMuestra::getTipoDeMaterial()
+const char* DetalleDeMuestra::getTipoDeMaterial()
 {
     return _TipoDeMaterial;
 }
@@ -74,7 +75,9 @@ int DetalleDeMuestra::getStock()
 
 void DetalleDeMuestra:: mostrar(){
 cout<<endl;
-cout<<_IDmuestra<< " "<<_IDproducto;
+cout<<_IDmuestra<< " "<<_IDproducto<<" "<<_Categoria<<" "<<_Modelo<<" "<<_Capacidad<<" "<< _TipoDeMaterial<<" "<<_Diametro<<" "<<_Stock;
+cout<<endl;
+cout<<endl;
 }
 
 
