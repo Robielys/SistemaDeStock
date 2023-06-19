@@ -85,10 +85,10 @@ void MuestraMenu::ListarDetalle(){
     cin >> Numero;
     for(int x=0;x<CantidadMuestraDetalle; x++){
         DetalleDeMuestra obj=archivoDetalle.Leer(x);
-        if(obj.getIDmuestra()==Numero){
             obj.mostrar();
+        /*if(obj.getIDmuestra()==Numero){
 
-        }
+        }*/
     }
 }
 void MuestraMenu::Mostrar()

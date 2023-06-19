@@ -2,6 +2,7 @@
 #define PROGRAMAPRINCIPAL_H
 #include "ClienteMenu.h"
 #include "ArticuloMenu.h"
+#include "MuestraMenu.h"
 
 
 class ProgramaPrincipal
@@ -12,6 +13,7 @@ class ProgramaPrincipal
     private:
         ClienteMenu MenuCliente;
         ArticuloMenu MenuArticulo;
+        MuestraMenu MenuMuestra;
 };
 
 #endif // PROGRAMAPRINCIPAL_H

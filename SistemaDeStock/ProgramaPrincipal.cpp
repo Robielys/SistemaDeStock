@@ -21,7 +21,7 @@ void ProgramaPrincipal::Ejecutar()
         switch(opcion)
         {
         case 1:
-
+            MenuMuestra.Mostrar();
             break;
         case 2:
             MenuCliente.mostrar();

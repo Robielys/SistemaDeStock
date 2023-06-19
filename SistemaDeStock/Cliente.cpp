@@ -15,7 +15,7 @@ void Cliente::setNombreEmpresa(string NombreEmpresa)
 {
     strcpy(_NombreEmpresa, NombreEmpresa.c_str());
 }
-void Cliente::setCuit(double Cuit)
+void Cliente::setCuit(int Cuit)
 {
     _Cuit = Cuit;
 }
@@ -36,7 +36,7 @@ string Cliente::getNombreEmpresa()
 {
     return _NombreEmpresa;
 }
-double Cliente::getCuit()
+int Cliente::getCuit()
 {
     return _Cuit;
 }
@@ -56,6 +56,7 @@ void Cliente::Cargar()
     cin >> _NombreEmpresa;
     cout << "Ingresar Cuit: ";
     cin>>_Cuit;
+    ValidarCuit(_Cuit);
     cout << "Ingresar Correo: ";
     cin >> _Correo;
     _Estado = true;
@@ -64,9 +65,7 @@ void Cliente::Mostrar()
 {
     if(_Estado == true)
     {
-        cout<<_NombreEmpresa<<endl;
-        cout<<_Cuit<<endl;
-        cout<<_Correo<<endl;
+        cout<<_NombreEmpresa<< " " <<_Cuit<< " "<<_Correo<<endl;
     }
 
 }

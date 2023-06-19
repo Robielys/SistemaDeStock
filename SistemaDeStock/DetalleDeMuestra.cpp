@@ -73,7 +73,8 @@ int DetalleDeMuestra::getStock()
 }
 
 void DetalleDeMuestra:: mostrar(){
-cout<<"muestra";
+cout<<endl;
+cout<<_IDmuestra<< " "<<_IDproducto;
 }
 
 
