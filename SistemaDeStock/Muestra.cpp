@@ -2,6 +2,7 @@
 #include "Fecha.h"
 #include <iostream>
 #include <cstring>
+#include "rlutil.h"
 using namespace std;
 
 void Muestra::setID(int id)
@@ -30,9 +31,20 @@ string Muestra::getNombreCliente()
     return _NombreCliente;
 }
 
-void Muestra::mostrar()
+void Muestra::mostrar(int Aumentar)
 {
-    cout << "   "<<_ID<<"     ";
-    cout << _NombreCliente<<"   ";
-    cout << _fecha.toString()<<"       "<<endl;
+        rlutil::locate(0,Aumentar);
+         cout << "|";
+         rlutil::locate(4,Aumentar);
+         cout << _ID;
+         rlutil::locate(10,Aumentar);
+         cout << "|";
+         rlutil::locate(13,Aumentar);
+         cout << _NombreCliente;
+         rlutil::locate(39,Aumentar);
+         cout << "|";
+         rlutil::locate(42,Aumentar);
+         cout << _fecha.toString();
+         rlutil::locate(57,Aumentar);
+         cout << "|"<<endl;
 }

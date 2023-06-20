@@ -2,12 +2,14 @@
 using namespace std;
 
 #include "ProgramaPrincipal.h"
+#include "rlutil.h"
 
 void ProgramaPrincipal::Ejecutar()
 {
     int opcion;
     do
     {
+        rlutil::cls();
         cout<< "-----------" << " Menu Principal " << "-----------" << endl;
         cout<< " 1.Solicitud de Muestras" << endl;
         cout<< " 2.Clientes" << endl;

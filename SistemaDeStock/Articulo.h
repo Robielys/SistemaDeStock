@@ -37,7 +37,7 @@ public:
     void Cargar();
     void Mostrar(int Aumentar);
     void Mostrar2(int cant, int Aumentar);
-    void Mostrar3(int Aumentar);
+    void MostrarBaja(int Aumentar);
     bool modificar();
 
 };

@@ -4,6 +4,8 @@ using namespace std;
 #include "ArticuloMenu.h"
 #include "ArticuloArchivo.h"
 #include "Articulo.h"
+#include "Funciones.h"
+#include "rlutil.h"
 
 void ArticuloMenu::Listar()
 {
@@ -14,12 +16,14 @@ void ArticuloMenu::Listar()
     archivo.Listar(Art, cantidad);
 
     int Aumentar = 4;
+    rlutil::cls();
+    EncabezadoDeArticulos();
     for(int i=0; i<cantidad; i++)
     {
         Art[i].Mostrar(Aumentar);
-        cout<<endl;
         Aumentar++;
     }
+    cout<<"-------------------------------------------------------------------------"<<endl;
     delete[] Art;
 
     system("pause");
@@ -27,28 +31,35 @@ void ArticuloMenu::Listar()
 void ArticuloMenu::guardar()
 {
     int Numero;
-    do{
+    do
+    {
         Articulo Art;
-    ArticuloArchivo CarArt;
-    Art.Cargar();
-    if(CarArt.guardar(Art))
-    {
-        cout << "Articulo guardado sastifactoriamente" << endl;
-    }
-    else
-    {
-        cout << "No se pudo guardar el articulo" << endl;
-    }
-    cout<< "SI DESEA TERMINAR LA CARGA INGRESE 0 ";
-    cin>> Numero;
+        ArticuloArchivo CarArt;
+        Art.Cargar();
+        if(CarArt.guardar(Art))
+        {
+            rlutil::cls();
+            EncabezadoDeArticulos();
+            Art.Mostrar(4);
+            cout << "Articulo guardado sastifactoriamente" << endl;
+        }
+        else
+        {
+            cout << "No se pudo guardar el articulo" << endl;
+        }
+        cout<<endl;
+        cout<< "SI DESEA TERMINAR LA CARGA INGRESE 0: ";
+        cin>> Numero;
 
-    system("pause");
-    }while(Numero!=0);
+
+    }
+    while(Numero!=0);
 
 }
 
 void ArticuloMenu::baja()
 {
+    rlutil::cls();
     ArticuloArchivo CarArt;
     Articulo Art;
     int ID, posicion;
@@ -59,13 +70,17 @@ void ArticuloMenu::baja()
 
     if(posicion != -1)
     {
-        cout << "Si existe" << endl;
+        ///cout << "Si existe" << endl;
         Art=CarArt.BuscarArt(posicion);
         Art.Mostrar(4);
         Art.setEstado(false);
         if(CarArt.guardarModificacion(Art, posicion))
         {
-            cout<< "Se dio de baja correctamente" <<endl;
+            rlutil::cls();
+            EncabezadoDeArticulos();
+            Art.MostrarBaja(4);
+            cout<<endl;
+            cout<< "Se dio de baja este articulo correctamente" <<endl;
         }
         else
         {
@@ -77,6 +92,7 @@ void ArticuloMenu::baja()
 
 void ArticuloMenu::editar()
 {
+    rlutil::cls();
     ArticuloArchivo CarArt;
     Articulo Art;
     int ID, posicion, can, opcion;
@@ -94,20 +110,23 @@ void ArticuloMenu::editar()
 
         if(posicion != -1)
         {
-            cout << "Si existe" << endl;
-
+            rlutil::cls();
             Art=CarArt.BuscarArt(posicion);
+            EncabezadoDeArticulos();
             Art.Mostrar(4);
             cout << "Cantidad a ingresar: ";
             cin >> can;
             Art.setStock(can);
             if(CarArt.guardarModificacion(Art, posicion))
             {
+                rlutil::cls();
+                EncabezadoDeArticulos();
+                Art.Mostrar(4);
                 cout<< "Se modifico correctamente" <<endl;
             }
             else
             {
-                cout << "No se pudo guardar" << endl;
+                cout << "No se pudo guardar modificacion" << endl;
 
             }
         }
@@ -120,7 +139,7 @@ void ArticuloMenu::editar()
     {
         if (opcion == 2)
         {
-
+            rlutil::cls();
             cout << "Ingresar ID que desea Modificar: ";
             cin >> ID;
 
@@ -128,15 +147,18 @@ void ArticuloMenu::editar()
 
             if(posicion != -1)
             {
-                cout << "Si existe" << endl;
-
+                rlutil::cls();
                 Art=CarArt.BuscarArt(posicion);
+                EncabezadoDeArticulos();
                 Art.Mostrar(4);
                 cout << "Cantidad a ingresar: ";
                 cin >> can;
                 Art.descontarStock(can);
                 if(CarArt.guardarModificacion(Art, posicion))
                 {
+                    rlutil::cls();
+                    EncabezadoDeArticulos();
+                    Art.Mostrar(4);
                     cout<< "Se modifico correctamente" <<endl;
                 }
                 else
@@ -164,6 +186,7 @@ void ArticuloMenu::Mostrar()
     int Opcion;
     do
     {
+        rlutil::cls();
         cout<< "-----------" << " Menu de articulos " << "-----------" << endl;
         cout<< " 1.Lista de todos los articulos" << endl;
         cout<< " 2.Cargar nuevo articulo" << endl;

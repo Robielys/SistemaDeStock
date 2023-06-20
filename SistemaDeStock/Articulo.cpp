@@ -4,6 +4,7 @@ using namespace std;
 #include "Articulo.h"
 #include "ArticuloArchivo.h"
 #include "Funciones.h"
+#include "rlutil.h"
 
 void Articulo::setID(int ID)
 {
@@ -105,6 +106,7 @@ bool Articulo::getEstado()
 
 void Articulo::Cargar()
 {
+    rlutil::cls();
     ArticuloArchivo reg;
     int validar=0;
     cout << "Ingresar Categoria: ";
@@ -127,37 +129,37 @@ void Articulo::Mostrar(int Aumentar)
 {
     if(_Estado == true)
     {
-        cout << _ID<<"  "<< _Categoria<<"  " << _Modelo<<"  "<< _Capacidad<<"  " << _Diametro<<"  " << _Stock<<endl;
-        /* rlutil::locate(2,Aumentar);
+        /*cout << _ID<<"  "<< _Categoria<<"  " << _Modelo<<"  "<< _Capacidad<<"  " << _Diametro<<"  " << _Stock<<endl;*/
+         rlutil::locate(0,Aumentar);
          cout << "|";
          rlutil::locate(4,Aumentar);
          cout << _ID;
-         rlutil::locate(7,Aumentar);
-         cout << "|";
          rlutil::locate(10,Aumentar);
+         cout << "|";
+         rlutil::locate(13,Aumentar);
          cout << _Categoria;
-         rlutil::locate(19,Aumentar);
-         cout << "|";
          rlutil::locate(22,Aumentar);
+         cout << "|";
+         rlutil::locate(24,Aumentar);
          cout << _Modelo;
-         rlutil::locate(28,Aumentar);
-         cout << "|";
          rlutil::locate(31,Aumentar);
+         cout << "|";
+         rlutil::locate(33,Aumentar);
          cout << _TipoDeMaterial;
-         rlutil::locate(39,Aumentar);
+         rlutil::locate(42,Aumentar);
          cout << "|";
-         rlutil::locate(43,Aumentar);
+         rlutil::locate(44,Aumentar);
          cout << _Capacidad;
-         rlutil::locate(51,Aumentar);
-         cout << "|";
          rlutil::locate(54,Aumentar);
-         cout << _Diametro;
-         rlutil::locate(62,Aumentar);
          cout << "|";
+         rlutil::locate(56,Aumentar);
+         cout << _Diametro;
          rlutil::locate(65,Aumentar);
+         cout << "|";
+         rlutil::locate(67,Aumentar);
          cout << _Stock;
-         rlutil::locate(69,Aumentar);
-         cout << "|" << endl;*/
+         rlutil::locate(73,Aumentar);
+         cout << "|" << endl;
     }
 }
 
@@ -198,9 +200,9 @@ void Articulo::Mostrar2(int cant, int Aumentar)
 
     }
 }
-void Articulo::Mostrar3(int Aumentar)
+void Articulo::MostrarBaja(int Aumentar)
 {
-    if(_Estado==true)
+    if(_Estado==false)
     {
 
         /*  rlutil::locate(2,Aumentar);
@@ -213,7 +215,41 @@ void Articulo::Mostrar3(int Aumentar)
           cout << _Modelo;
           rlutil::locate(28,Aumentar);
           cout << "|"<< endl;*/
+
+           rlutil::locate(0,Aumentar);
+         cout << "|";
+         rlutil::locate(4,Aumentar);
+         cout << _ID;
+         rlutil::locate(10,Aumentar);
+         cout << "|";
+         rlutil::locate(13,Aumentar);
+         cout << _Categoria;
+         rlutil::locate(22,Aumentar);
+         cout << "|";
+         rlutil::locate(24,Aumentar);
+         cout << _Modelo;
+         rlutil::locate(31,Aumentar);
+         cout << "|";
+         rlutil::locate(33,Aumentar);
+         cout << _TipoDeMaterial;
+         rlutil::locate(42,Aumentar);
+         cout << "|";
+         rlutil::locate(44,Aumentar);
+         cout << _Capacidad;
+         rlutil::locate(54,Aumentar);
+         cout << "|";
+         rlutil::locate(56,Aumentar);
+         cout << _Diametro;
+         rlutil::locate(65,Aumentar);
+         cout << "|";
+         rlutil::locate(67,Aumentar);
+         cout << _Stock;
+         rlutil::locate(73,Aumentar);
+         cout << "|" << endl;
     }
+
+
+
 }
 bool Articulo::modificar()
 {

@@ -17,7 +17,7 @@ public:
     Fecha getFecha();
     void setFecha(Fecha aux);
     string getNombreCliente();
-    void mostrar();
+    void mostrar(int Aumentar);
 };
 
 #endif // MUESTRA_H

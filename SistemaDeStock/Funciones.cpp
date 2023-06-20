@@ -22,7 +22,7 @@ bool ValidarCuit(int cuit)
         cliente=archivoC.BuscarCliente(i);
         if(cliente.getCuit()== cuit){
             cout<<"Este CUIT ya existe"<< endl;
-            return true
+            return true;
         }
     }
     return false;
@@ -43,5 +43,30 @@ for(int x =0; x<cantidad;x++){
 return false;
 }
 
+void EncabezadoDeArticulos(){
+cout<<"-------------------------------------------------------------------------"<<endl;
+cout<<"| Codigo | Categoria | Modelo | Material | Capacidad | Diametro | Stock |"<<endl;
+cout<<"-------------------------------------------------------------------------"<<endl;
+
+}
+
+void EncabezadoDeClientes(){
+cout<<"-------------------------------------------------------------------------"<<endl;
+cout<<"| Codigo |    CUIT   |   Nombre empresa   |           Correo            |"<<endl;
+cout<<"-------------------------------------------------------------------------"<<endl;
+
+}
+
+void EncabezadoDeMuestras(){
+cout<<"---------------------------------------------------------"<<endl;
+cout<<"| Codigo |      Nombre empresa        |      Fecha      |"<<endl;
+cout<<"---------------------------------------------------------"<<endl;
 
 
+}
+void EncabezadoDetallesM(){
+cout<<"----------------------------------------------------------------------------------------"<<endl;
+cout<<"| Codigo | Cod.Producto | Categoria | Modelo | Material | Capacidad | Diametro | Stock |"<<endl;
+cout<<"----------------------------------------------------------------------------------------"<<endl;
+
+}

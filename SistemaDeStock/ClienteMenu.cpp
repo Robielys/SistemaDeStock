@@ -4,20 +4,25 @@ using namespace std;
 #include "ClienteMenu.h"
 #include "ClienteArchivo.h"
 #include "Cliente.h"
-
+#include "rlutil.h"
+#include "Funciones.h"
 
 
 void ClienteMenu::Listar()
 {
+    int aumentar=4;
     ClienteArchivo archivo;
     int cantidad = archivo.getCantidad();
     Cliente *cliente= new Cliente[cantidad];
-
     archivo.listar(cliente, cantidad);
+    rlutil::cls();
+    EncabezadoDeClientes();
     for(int i=0; i<cantidad; i++)
     {
-        cliente[i].Mostrar();
+        cliente[i].Mostrar(aumentar);
+        aumentar++;
     }
+    cout<<"-------------------------------------------------------------------------"<<endl;
     delete[] cliente;
 
     system("pause");
@@ -26,11 +31,16 @@ void ClienteMenu::Listar()
 
 void ClienteMenu::guardar()
 {
+    rlutil::cls();
     Cliente cliente;
     ClienteArchivo archivo;
     cliente.Cargar();
     if(archivo.guardar(cliente))
     {
+        rlutil::cls();
+        EncabezadoDeClientes();
+        cliente.Mostrar(4);
+        cout<<endl;
         cout << "Cliente guardado satisfactoriamente" << endl;
     }
     else
@@ -43,6 +53,7 @@ void ClienteMenu::guardar()
 
 void ClienteMenu::baja()
 {
+    rlutil::cls();
     Cliente cliente;
     ClienteArchivo archivo;
     int ID, posicion;
@@ -53,13 +64,18 @@ void ClienteMenu::baja()
 
     if(posicion != -1)
     {
-        cout << "Si existe" << endl;
 
         cliente=archivo.BuscarCliente(posicion);
-        cliente.Mostrar();
+        rlutil::cls();
+        EncabezadoDeClientes();
+        cliente.Mostrar(4);
         cliente.setEstado(false);
         if(archivo.guardarModificacion(cliente, posicion))
         {
+            rlutil::cls();
+            EncabezadoDeClientes();
+            cliente.MostrarBaja(4);
+            cout<<endl;
             cout<< "Este cliente se dio de baja correctamente" <<endl;
         }
         else
@@ -79,6 +95,7 @@ void ClienteMenu::baja()
 
 void ClienteMenu::editar()
 {
+    rlutil::cls();
     Cliente cliente;
     ClienteArchivo archivo;
     int ID, posicion, opcion;
@@ -96,15 +113,19 @@ void ClienteMenu::editar()
 
         if(posicion != -1)
         {
-            cout << "Si existe" << endl;
 
             cliente=archivo.BuscarCliente(posicion);
-            cliente.Mostrar();
+            rlutil::cls();
+            EncabezadoDeClientes();
+            cliente.Mostrar(4);
             cout << "Ingresar el Correo: ";
             cin >> can;
             cliente.setCorreo(can);
             if(archivo.guardarModificacion(cliente, posicion))
             {
+                rlutil::cls();
+                EncabezadoDeClientes();
+                cliente.Mostrar(4);
                 cout<< "Se modifico correctamente" <<endl;
             }
             else
@@ -122,6 +143,7 @@ void ClienteMenu::editar()
     {
         if (opcion == 2)
         {
+            rlutil::cls();
             cout << "Ingresar ID que desea Modificar: ";
             cin >> ID;
 
@@ -129,15 +151,19 @@ void ClienteMenu::editar()
 
             if(posicion != -1)
             {
-                cout << "Si existe" << endl;
 
                 cliente=archivo.BuscarCliente(posicion);
-                cliente.Mostrar();
+                rlutil::cls();
+                EncabezadoDeClientes();
+                cliente.Mostrar(4);
                 cout << "Ingrese el Nombre de la empresa: ";
                 cin >> can;
                 cliente.setNombreEmpresa(can);
                 if(archivo.guardarModificacion(cliente, posicion))
                 {
+                    rlutil::cls();
+                    EncabezadoDeClientes();
+                    cliente.Mostrar(4);
                     cout<< "Se modifico correctamente" <<endl;
                 }
                 else
@@ -160,6 +186,7 @@ void ClienteMenu::mostrar()
     int opcion;
     do
     {
+        rlutil::cls();
         cout<< "-----------" << " Menu de clientes " << "-----------" << endl;
         cout<< " 1.Lista de clientes" << endl;
         cout<< " 2.Cargar nuevo cliente" << endl;

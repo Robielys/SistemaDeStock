@@ -11,6 +11,8 @@ using namespace std;
 #include "Cliente.h"
 #include "ClienteArchivo.h"
 #include "Fecha.h"
+#include "Funciones.h"
+#include "rlutil.h"
 
 void MuestraMenu::Listar()
 {
@@ -18,17 +20,22 @@ void MuestraMenu::Listar()
     int cantidad = archivo.getCantidad();
     Muestra* muestra = new Muestra[cantidad];
     archivo.listar(muestra, cantidad);
-    /*int aumentar= 4;*/
+    rlutil::cls();
+    EncabezadoDeMuestras();
+    int aumentar= 4;
     for(int x=0; x<cantidad; x++)
     {
 
-        muestra[x].mostrar();
+        muestra[x].mostrar(aumentar);
+        aumentar++;
     }
+    cout<<"---------------------------------------------------------"<<endl;
     delete [] muestra;
     system("pause");
 }
 void MuestraMenu::guardar()
 {
+    rlutil::cls();
     Fecha fecha;
     Muestra muestra;
     MuestraArchivo archivomuest;
@@ -82,6 +89,7 @@ void MuestraMenu::guardar()
 }
 void MuestraMenu::ListarDetalle()
 {
+    rlutil::cls();
     DetalleDeMuestraArchivo archivoDetalle;
     MuestraArchivo archivoMuestra;
     int CantidadMuestraDetalle= archivoDetalle.CantidadRegistros();
@@ -91,7 +99,7 @@ void MuestraMenu::ListarDetalle()
 
     for(int i=0; i<CantidadMuestra; i++)
     {
-        muestra[i].mostrar();
+        muestra[i].mostrar(4);
     }
     int Numero;
     cout << "¿Cual numero de muestra desea ver?";
