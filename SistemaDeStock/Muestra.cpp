@@ -13,13 +13,21 @@ void Muestra::setNombreCliente(string NombreCliente)
 {
     strcpy(_NombreCliente, NombreCliente.c_str());
 }
-void Muestra::setFecha(Fecha aux){
+void Muestra::setFecha(Fecha aux)
+{
     _fecha= aux;
 }
 
-Fecha Muestra::getFecha(){
+void Muestra::setIDcliente(int idcliente)
+{
+    _IDcliente=idcliente;
 
-return _fecha;
+}
+
+Fecha Muestra::getFecha()
+{
+
+    return _fecha;
 }
 
 int Muestra::getID()
@@ -31,20 +39,24 @@ string Muestra::getNombreCliente()
     return _NombreCliente;
 }
 
+int Muestra::getIDcliente(){
+    return _IDcliente;
+}
+
 void Muestra::mostrar(int Aumentar)
 {
-        rlutil::locate(0,Aumentar);
-         cout << "|";
-         rlutil::locate(4,Aumentar);
-         cout << _ID;
-         rlutil::locate(10,Aumentar);
-         cout << "|";
-         rlutil::locate(13,Aumentar);
-         cout << _NombreCliente;
-         rlutil::locate(39,Aumentar);
-         cout << "|";
-         rlutil::locate(42,Aumentar);
-         cout << _fecha.toString();
-         rlutil::locate(57,Aumentar);
-         cout << "|"<<endl;
+    rlutil::locate(0,Aumentar);
+    cout << "|";
+    rlutil::locate(4,Aumentar);
+    cout << _ID;
+    rlutil::locate(10,Aumentar);
+    cout << "|";
+    rlutil::locate(13,Aumentar);
+    cout << _NombreCliente;
+    rlutil::locate(39,Aumentar);
+    cout << "|";
+    rlutil::locate(42,Aumentar);
+    cout << _fecha.toString();
+    rlutil::locate(57,Aumentar);
+    cout << "|"<<endl;
 }

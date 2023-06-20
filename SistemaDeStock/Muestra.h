@@ -9,14 +9,17 @@ class Muestra
 private:
     int _ID;
     char _NombreCliente[50];
+    int _IDcliente;
     Fecha _fecha;
 public:
     void setID(int id);
     void setNombreCliente(string NombreCliente);
-    int getID();
-    Fecha getFecha();
+    void setIDcliente(int idcliente);
     void setFecha(Fecha aux);
+    int getID();
     string getNombreCliente();
+    int getIDcliente();
+    Fecha getFecha();
     void mostrar(int Aumentar);
 };
 

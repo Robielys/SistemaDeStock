@@ -36,7 +36,7 @@ class DetalleDeMuestra
         int getDiametro();
         int getStock();
 
-        void mostrar();
+        void mostrar(int Aumentar);
 };
 
 #endif // DETALLEDEMUESTRA_H

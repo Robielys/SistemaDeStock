@@ -3,6 +3,7 @@
 #include <cstring>
 using namespace std;
 #include <iostream>
+#include "rlutil.h"
 
 
 void DetalleDeMuestra::setIDmuestra(int idmuestra)
@@ -73,11 +74,38 @@ int DetalleDeMuestra::getStock()
     return _Stock;
 }
 
-void DetalleDeMuestra:: mostrar(){
-cout<<endl;
-cout<<_IDmuestra<< " "<<_IDproducto<<" "<<_Categoria<<" "<<_Modelo<<" "<<_Capacidad<<" "<< _TipoDeMaterial<<" "<<_Diametro<<" "<<_Stock;
-cout<<endl;
-cout<<endl;
+void DetalleDeMuestra:: mostrar(int Aumentar)
+{
+    rlutil::locate(1,Aumentar);
+    cout << "|";
+    rlutil::locate(3,Aumentar);
+    cout << _IDproducto;
+    rlutil::locate(16,Aumentar);
+    cout << "|";
+    rlutil::locate(18,Aumentar);
+    cout << _Categoria;
+    rlutil::locate(28,Aumentar);
+    cout << "|";
+    rlutil::locate(30,Aumentar);
+    cout << _Modelo;
+    rlutil::locate(37,Aumentar);
+    cout << "|";
+    rlutil::locate(39,Aumentar);
+    cout << _TipoDeMaterial;
+    rlutil::locate(48,Aumentar);
+    cout << "|";
+    rlutil::locate(50,Aumentar);
+    cout << _Capacidad<<" ml";
+    rlutil::locate(60,Aumentar);
+    cout << "|";
+    rlutil::locate(62,Aumentar);
+    cout << _Diametro<<" cm";
+    rlutil::locate(71,Aumentar);
+    cout << "|";
+    rlutil::locate(73,Aumentar);
+    cout << _Stock;
+    rlutil::locate(79,Aumentar);
+    cout << "|" << endl;
 }
 
 
