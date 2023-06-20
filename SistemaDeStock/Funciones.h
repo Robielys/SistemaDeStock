@@ -6,6 +6,7 @@
 bool ValidarCuit(long long cuit);
 bool ValidarModelo(const char *modelo);
 bool ValidarOpcionMenuPrincipal(int menu,int opcion);
+bool ValidarArticulo(int codigoArticulo);
 void EncabezadoDeArticulos();
 void EncabezadoDeClientes();
 void EncabezadoDeMuestras();

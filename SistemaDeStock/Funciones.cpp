@@ -85,6 +85,21 @@ bool ValidarOpcionMenuPrincipal(int menu,int opcion)
     return false;
 }
 
+bool ValidarArticulo(int codigoArticulo){
+Articulo articulo;
+ArticuloArchivo archivo;
+int cantidad= archivo.getCantidad();
+for(int x=0;x<cantidad;x++){
+    articulo=archivo.BuscarArt(x);
+    if(articulo.getID()==codigoArticulo){
+        return true;
+    }
+}
+cout<<"Codigo de articulo no existe"<< endl;
+return false;
+
+}
+
 void EncabezadoDeArticulos()
 {
     cout<<"-------------------------------------------------------------------------"<<endl;

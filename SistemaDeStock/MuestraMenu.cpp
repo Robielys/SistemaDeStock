@@ -68,7 +68,7 @@ void MuestraMenu::guardar()
         rlutil::locate(1,26);
         cout<<"Ingresar codigo de articulo: ";
         cin>>codigoArticulo;
-        if(codigoArticulo>0)
+        if(ValidarArticulo(codigoArticulo))
         {
             detalleM.setIDmuestra(archivomuest.getCantidad());
             posicion=archivoarticulo.buscar(codigoArticulo);
@@ -99,7 +99,7 @@ void MuestraMenu::guardar()
     if(limite ==10)
     {
         cout<<endl;
-        cout<< "SE ALCANZO LIMITE DE MUESTRAS PARA CLIENTE"<<endl;
+        cout<< "SE ALCANZO LIMITE DE MUESTRAS PARA ESTE CLIENTE"<<endl;
         system("pause");
     }
 
