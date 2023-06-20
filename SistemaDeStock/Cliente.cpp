@@ -16,7 +16,7 @@ void Cliente::setNombreEmpresa(string NombreEmpresa)
 {
     strcpy(_NombreEmpresa, NombreEmpresa.c_str());
 }
-void Cliente::setCuit(int Cuit)
+void Cliente::setCuit(long long Cuit)
 {
     _Cuit = Cuit;
 }
@@ -37,7 +37,7 @@ string Cliente::getNombreEmpresa()
 {
     return _NombreEmpresa;
 }
-int Cliente::getCuit()
+long long Cliente::getCuit()
 {
     return _Cuit;
 }
@@ -59,7 +59,7 @@ void Cliente::Cargar()
     do{
     cout << "Ingresar Cuit: ";
     cin>>_Cuit;
-    }while(ValidarCuit(_Cuit)==true);
+    }while(ValidarCuit(_Cuit)==false);
     cout << "Ingresar Correo: ";
     cin >> _Correo;
     _Estado = true;

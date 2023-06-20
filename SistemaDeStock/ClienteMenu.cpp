@@ -32,14 +32,22 @@ void ClienteMenu::Listar()
 void ClienteMenu::guardar()
 {
     rlutil::cls();
-    Cliente cliente;
+    Cliente cliente, cliente2;
     ClienteArchivo archivo;
     cliente.Cargar();
     if(archivo.guardar(cliente))
     {
+        int cantidad=archivo.getCantidad();
+        for(int x=0; x<cantidad;x++){
+            cliente2=archivo.BuscarCliente(x);
+            if(cliente2.getCuit()==cliente.getCuit()){
         rlutil::cls();
         EncabezadoDeClientes();
-        cliente.Mostrar(4);
+        cliente2.Mostrar(4);
+
+            }
+        }
+
         cout<<endl;
         cout << "Cliente guardado satisfactoriamente" << endl;
     }
@@ -197,7 +205,7 @@ void ClienteMenu::mostrar()
         cout<< endl;
         cout<< " Ingresar el Numero de la Opcion: ";
         cin>>opcion;
-
+        if(ValidarOpcionMenuPrincipal(5,opcion)){
         switch(opcion)
         {
         case 1:
@@ -214,6 +222,7 @@ void ClienteMenu::mostrar()
             break;
 
         }
+    }
     }
     while (opcion!=0);
 }

@@ -3,8 +3,9 @@
 #include "Cliente.h"
 #include "Muestra.h"
 
-bool ValidarCuit(int cuit);
+bool ValidarCuit(long long cuit);
 bool ValidarModelo(const char *modelo);
+bool ValidarOpcionMenuPrincipal(int menu,int opcion);
 void EncabezadoDeArticulos();
 void EncabezadoDeClientes();
 void EncabezadoDeMuestras();

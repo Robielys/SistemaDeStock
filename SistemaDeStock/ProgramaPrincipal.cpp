@@ -3,6 +3,7 @@ using namespace std;
 
 #include "ProgramaPrincipal.h"
 #include "rlutil.h"
+#include "Funciones.h"
 
 void ProgramaPrincipal::Ejecutar()
 {
@@ -19,23 +20,27 @@ void ProgramaPrincipal::Ejecutar()
         cout<< endl;
         cout<< " Ingresar el Numero de la Opcion: ";
         cin>> opcion;
-
-        switch(opcion)
+        if(ValidarOpcionMenuPrincipal(4,opcion))
         {
-        case 1:
-            MenuMuestra.Mostrar();
-            break;
-        case 2:
-            MenuCliente.mostrar();
-            break;
-        case 3:
-            MenuArticulo.Mostrar();
-            break;
-        case 0:
-            cout<<endl;
-            cout<<"Gracias por usar nuestro Programa :)" <<endl;
-            break;
+
+            switch(opcion)
+            {
+            case 1:
+                MenuMuestra.Mostrar();
+                break;
+            case 2:
+                MenuCliente.mostrar();
+                break;
+            case 3:
+                MenuArticulo.Mostrar();
+                break;
+            case 0:
+                cout<<endl;
+                cout<<"Gracias por usar nuestro Programa :)" <<endl;
+                break;
+            }
         }
     }
+
     while(opcion !=0);
 }

@@ -153,7 +153,7 @@ void MuestraMenu::Mostrar()
         cout<< endl;
         cout<< " Ingresar el Numero de la Opcion: ";
         cin>> opcion;
-
+        if(ValidarOpcionMenuPrincipal(4,opcion)){
         switch(opcion)
         {
         case 1:
@@ -170,7 +170,9 @@ void MuestraMenu::Mostrar()
         }
         break;
         }
+        }
     }
+
     while(opcion!=0);
 
 }

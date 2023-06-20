@@ -197,7 +197,7 @@ void ArticuloMenu::Mostrar()
         cout<< endl;
         cout<< " Ingresar el Numero de la Opcion: ";
         cin>>Opcion;
-
+        if(ValidarOpcionMenuPrincipal(5,Opcion)){
         switch(Opcion)
         {
 
@@ -214,6 +214,7 @@ void ArticuloMenu::Mostrar()
             editar();
             break;
         }
+    }
     }
     while(Opcion!=0);
 }

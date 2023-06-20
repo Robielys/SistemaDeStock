@@ -26,27 +26,30 @@ void MostrarMuestras()
     delete[] muestra;
 
 }
-bool ValidarCuit(int cuit)
+bool ValidarCuit(long long cuit)
 {
-    if (cuit <0)
+    if (cuit>9999999999 && cuit<100000000000)
     {
-        cout<<"Cuit invalido";
-        cout<<endl;
-        return true;
-    }
-    Cliente cliente;
-    ClienteArchivo archivoC;
-    int cantidad= archivoC.getCantidad();
-    for(int i=0; i<cantidad; i++)
-    {
-        cliente=archivoC.BuscarCliente(i);
-        if(cliente.getCuit()== cuit)
+        Cliente cliente;
+        ClienteArchivo archivoC;
+        int cantidad= archivoC.getCantidad();
+        for(int i=0; i<cantidad; i++)
         {
-            cout<<"Este CUIT ya existe"<< endl;
-            return true;
+            cliente=archivoC.BuscarCliente(i);
+            if(cliente.getCuit()== cuit)
+            {
+                cout<<"Este CUIT ya existe"<< endl;
+                return false;
+            }
+
         }
+        return true;
+
     }
+    else{
+     cout<<"Ingrese un CUIT valido"<<endl;
     return false;
+    }
 }
 
 bool ValidarModelo( const char *modelo)
@@ -64,6 +67,21 @@ bool ValidarModelo( const char *modelo)
             return true;
         }
     }
+    return false;
+}
+
+bool ValidarOpcionMenuPrincipal(int menu,int opcion)
+{
+    int x=0;
+    for(x=0; x<menu; x++)
+    {
+        if(opcion<=menu-1&&opcion>=0)
+        {
+            return true;
+        }
+    }
+    cout<<"Ingrese una opcion valida de menu"<<endl;
+    system("pause");
     return false;
 }
 
