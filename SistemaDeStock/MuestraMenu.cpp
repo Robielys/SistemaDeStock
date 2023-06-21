@@ -83,6 +83,7 @@ void MuestraMenu::guardar()
             cout<<"|  Ingresar la cantidad: ";
             cin>>cantidad;
             articulo.descontarStock(cantidad);
+            archivoarticulo.guardarModificacion(articulo,posicion);
             detalleM.setStock(cantidad);
             archivodetalle.Guardar(detalleM);
             detalleM.mostrar(aumentar);
