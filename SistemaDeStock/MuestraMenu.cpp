@@ -21,8 +21,9 @@ void MuestraMenu::Listar()
     Muestra* muestra = new Muestra[cantidad];
     archivo.listar(muestra, cantidad);
     rlutil::cls();
+    TituloDeMuestras();
     EncabezadoDeMuestras();
-    int aumentar= 4;
+    int aumentar= 7;
     for(int x=0; x<cantidad; x++)
     {
         muestra[x].mostrar(aumentar);
@@ -56,10 +57,12 @@ void MuestraMenu::guardar()
     muestra.setIDcliente(cliente.getID());
     archivomuest.guardar(muestra);
     rlutil::cls();
+    TituloPedidos();
     EncabezadoDeMuestras2(archivomuest.getCantidad(),cliente);
     EncabezadoDetallesM();
-    int codigoArticulo, limite=0, aumentar=12;
-
+    int codigoArticulo, limite=0, aumentar=14;
+            rlutil::locate(1,30);
+        cout<<"Para terminar la carga ingrese 0.";
     for(int x=0; x<10; x++)
     {
         int posicion=0;
@@ -80,8 +83,10 @@ void MuestraMenu::guardar()
             detalleM.setIDproducto(articulo.getID());
             detalleM.setTipoDeMaterial(articulo.getTipoDeMaterial());
             rlutil::locate(34,26);
+            do{
             cout<<"|  Ingresar la cantidad: ";
             cin>>cantidad;
+            }while (!ValidarCantidad(cantidad));
             articulo.descontarStock(cantidad);
             archivoarticulo.guardarModificacion(articulo,posicion);
             detalleM.setStock(cantidad);
@@ -122,9 +127,10 @@ void MuestraMenu::ListarDetalle()
     int posicion=archivocli.buscar(muestra.getIDcliente());
     cliente=archivocli.BuscarCliente(posicion);
     rlutil::cls();
+    TituloDetalles();
     EncabezadoDeMuestras3(Numero,muestra,cliente);
     EncabezadoDetallesM();
-    int aumentar=12;
+    int aumentar=15;
     for(int x=0; x<CantidadMuestraDetalle; x++)
     {
         DetalleDeMuestra obj=archivoDetalle.Leer(x);
@@ -174,7 +180,7 @@ void MuestraMenu::Consulta()
         for(int i=0; i<cantidadDetalle; i++)
         {
             detalleM=archivoDetalle.Leer(i);
-            if(articulo.getID()== detalleM.getIDproducto())
+            if(articulo.getID()== detalleM.getIDproducto()&& articulo.getEstado())
             {
                 TotalArticulo[x]+=detalleM.getStock();
             }

@@ -20,8 +20,10 @@ void ArticuloMenu::Listar()
     EncabezadoDeArticulos();
     for(int i=0; i<cantidad; i++)
     {
+        if(Art[i].getEstado()){
         Art[i].Mostrar(Aumentar);
         Aumentar++;
+        }
     }
     cout<<"-------------------------------------------------------------------------"<<endl;
     delete[] Art;
@@ -187,33 +189,26 @@ void ArticuloMenu::ConsultaStock()
     ArticuloArchivo archivo;
     int cantidadArticulos = archivo.getCantidad();
 
-
-    int Cantidad, aumentar=4;
+    int Cantidad=0;
+    int aumentar=4;
     cout<< "Ingrese hasta que cantidad de Stock desea filtrar: ";
     cin>>Cantidad;
     rlutil::cls();
     EncabezadoDeArticulos();
-    bool validacion=false;
+    int validacion=0;
     for(int i=0; i<cantidadArticulos; i++)
     {
         articulo = archivo.BuscarArt(i);
+
         if(articulo.getStock()<=Cantidad)
         {
             articulo.Mostrar(aumentar);
             aumentar++;
-            validacion=true;
         }
-    }
-    if(validacion)
-    {
-        cout<<"-------------------------------------------------------------------------"<<endl;
-    }
-    else
-    {
-        cout<<"No hay Articulos con stock menor o igual a la cantidad ingresada"<<endl;
-    }
 
-    system("pause");
+    }
+    cout<<"-------------------------------------------------------------------------"<<endl;
+system("pause");
 }
 
 void ArticuloMenu::Mostrar()

@@ -12,11 +12,18 @@ using namespace std;
 
 void MostrarRanking(int *vecArticulo,int *vecTotal, int cantidad)
 {
+int cantidadTotal=0;
+    cout<<"**************************************************************"<<endl;
+    cout<<"       Consulta de cantidad de articulos entregados           "<<endl;
+    cout<<"=============================================================="<<endl;
 
     for(int i=0; i<cantidad; i++)
     {
         cout<<"Numero de Articulo: " <<vecArticulo[i] <<" "<< "Cantidad de muestras entregadas: "<<vecTotal[i]<<endl;
+        cantidadTotal+=vecTotal[i];
     }
+    cout<<endl;
+    cout<<"Cantidad total de articulos entregados al dia de hoy : "<< cantidadTotal<<endl;
 
 }
 void MostrarMuestras()
@@ -25,8 +32,9 @@ void MostrarMuestras()
     int CantidadMuestra= archivoMuestra.getCantidad();
     Muestra *muestra = new Muestra[CantidadMuestra];
     archivoMuestra.listar(muestra,CantidadMuestra);
-    int aumentar=4;
+    int aumentar=7;
     rlutil::cls();
+    TituloDeMuestras();
     EncabezadoDeMuestras();
     for(int i=0; i<CantidadMuestra; i++)
     {
@@ -104,7 +112,7 @@ bool ValidarArticulo(int codigoArticulo)
     for(int x=0; x<cantidad; x++)
     {
         articulo=archivo.BuscarArt(x);
-        if(articulo.getID()==codigoArticulo)
+        if(articulo.getID()==codigoArticulo&&articulo.getEstado())
         {
             return true;
         }
@@ -112,6 +120,16 @@ bool ValidarArticulo(int codigoArticulo)
     cout<<"Codigo de articulo no existe"<< endl;
     return false;
 
+}
+
+bool ValidarCantidad(int cantidad){
+if(cantidad<=6){
+    return true;
+}
+else {
+    cout<<"El maximo permitido por productos es de 6 unidades"<<endl;
+        return false;
+}
 }
 
 void EncabezadoDeArticulos()
@@ -130,14 +148,31 @@ void EncabezadoDeClientes()
 
 }
 
+void TituloDeMuestras(){
+    cout<<"*********************************************************"<<endl;
+    cout<<"               Lista de pedidos de muestras              "<<endl;
+    cout<<"========================================================="<<endl;
+}
 void EncabezadoDeMuestras()
 {
+
     cout<<"---------------------------------------------------------"<<endl;
     cout<<"| Codigo |      Nombre empresa        |      Fecha      |"<<endl;
     cout<<"---------------------------------------------------------"<<endl;
 
 
 }
+void TituloPedidos(){
+    cout<<"*******************************************************************************"<<endl;
+    cout<<"                          Solicitud de muestras                                "<<endl;
+    cout<<"==============================================================================="<<endl;
+}
+void TituloDetalles(){
+    cout<<"*******************************************************************************"<<endl;
+    cout<<"                         Detalle de muestras                                   "<<endl;
+    cout<<"==============================================================================="<<endl;
+}
+
 void EncabezadoDetallesM()
 {
     cout<<"-------------------------------------------------------------------------------"<<endl;
@@ -149,12 +184,12 @@ void EncabezadoDetallesM()
 void EncabezadoDeMuestras2(int Numero, Cliente cliente)
 {
     Fecha feHoy;
-    cout << " Pedido de muestra" <<"                  " << "    Fecha de pedido: " << feHoy.toString() << endl;
+    cout << " Detalle  de muestra" <<"                  " << "    Fecha de pedido: " << feHoy.toString() << endl;
     cout << endl;
     cout << " Codigo Muestra: " << Numero << endl;
     cout <<endl;
     cout << " Datos del cliente: " << endl;
-    cout << "-------------------------------------------------------------------------------"<< endl;
+    ///cout << "-------------------------------------------------------------------------------"<< endl;
     cout << " CUIT: " << cliente.getCuit() <<"   "<<"Empresa: " << cliente.getNombreEmpresa() << "   " << "Correo: " << cliente.getCorreo()<<endl;
     cout << "-------------------------------------------------------------------------------"<< endl;
 }
