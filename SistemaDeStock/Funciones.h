@@ -14,4 +14,5 @@ void EncabezadoDetallesM();
 void EncabezadoDeMuestras2(int Numero, Cliente cliente);
 void EncabezadoDeMuestras3(int Numero, Muestra muestra, Cliente cliente);
 void MostrarMuestras();
+void MostrarRanking(int *vecArticulo,int *vecTotal, int cantidad);
 #endif // FUNCIONES_H

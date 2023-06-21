@@ -181,6 +181,41 @@ void ArticuloMenu::editar()
 
 }
 
+void ArticuloMenu::ConsultaStock()
+{
+    Articulo articulo;
+    ArticuloArchivo archivo;
+    int cantidadArticulos = archivo.getCantidad();
+
+
+    int Cantidad, aumentar=4;
+    cout<< "Ingrese hasta que cantidad de Stock desea filtrar: ";
+    cin>>Cantidad;
+    rlutil::cls();
+    EncabezadoDeArticulos();
+    bool validacion=false;
+    for(int i=0; i<cantidadArticulos; i++)
+    {
+        articulo = archivo.BuscarArt(i);
+        if(articulo.getStock()<=Cantidad)
+        {
+            articulo.Mostrar(aumentar);
+            aumentar++;
+            validacion=true;
+        }
+    }
+    if(validacion)
+    {
+        cout<<"-------------------------------------------------------------------------"<<endl;
+    }
+    else
+    {
+        cout<<"No hay Articulos con stock menor o igual a la cantidad ingresada"<<endl;
+    }
+
+    system("pause");
+}
+
 void ArticuloMenu::Mostrar()
 {
     int Opcion;
@@ -192,29 +227,34 @@ void ArticuloMenu::Mostrar()
         cout<< " 2.Cargar nuevo articulo" << endl;
         cout<< " 3.Dar de baja un articulo" << endl;
         cout<< " 4.Modificar un articulo" << endl;
+        cout<< " 5.Consulta de Stock" << endl;
         cout<< "-----------------------------------------" << endl;
         cout<< " 0. Volver al menu principal" << endl;
         cout<< endl;
         cout<< " Ingresar el Numero de la Opcion: ";
         cin>>Opcion;
-        if(ValidarOpcionMenuPrincipal(5,Opcion)){
-        switch(Opcion)
+        if(ValidarOpcionMenuPrincipal(6,Opcion))
         {
+            switch(Opcion)
+            {
 
-        case 1:
-            Listar();
-            break;
-        case 2:
-            guardar();
-            break;
-        case 3:
-            baja();
-            break;
-        case 4:
-            editar();
-            break;
+            case 1:
+                Listar();
+                break;
+            case 2:
+                guardar();
+                break;
+            case 3:
+                baja();
+                break;
+            case 4:
+                editar();
+                break;
+            case 5:
+                ConsultaStock();
+                break;
+            }
         }
-    }
     }
     while(Opcion!=0);
 }

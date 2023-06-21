@@ -10,6 +10,7 @@ class MuestraMenu
         void Listar();
         void guardar();
         void ListarDetalle();
+        void Consulta();
 };
 
 #endif // MUESTRAMENU_H

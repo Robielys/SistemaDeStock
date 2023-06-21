@@ -12,6 +12,7 @@ class ArticuloMenu
         void guardar();
         void baja();
         void editar();
+        void ConsultaStock();
 };
 
 #endif // ARTICULOMENU_H

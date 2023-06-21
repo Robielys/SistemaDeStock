@@ -9,6 +9,16 @@ using namespace std;
 #include "Muestra.h"
 #include "MuestraArchivo.h"
 #include "rlutil.h"
+
+void MostrarRanking(int *vecArticulo,int *vecTotal, int cantidad)
+{
+
+    for(int i=0; i<cantidad; i++)
+    {
+        cout<<"Numero de Articulo: " <<vecArticulo[i] <<" "<< "Cantidad de muestras entregadas: "<<vecTotal[i]<<endl;
+    }
+
+}
 void MostrarMuestras()
 {
     MuestraArchivo archivoMuestra;
@@ -46,9 +56,10 @@ bool ValidarCuit(long long cuit)
         return true;
 
     }
-    else{
-     cout<<"Ingrese un CUIT valido"<<endl;
-    return false;
+    else
+    {
+        cout<<"Ingrese un CUIT valido"<<endl;
+        return false;
     }
 }
 
@@ -85,18 +96,21 @@ bool ValidarOpcionMenuPrincipal(int menu,int opcion)
     return false;
 }
 
-bool ValidarArticulo(int codigoArticulo){
-Articulo articulo;
-ArticuloArchivo archivo;
-int cantidad= archivo.getCantidad();
-for(int x=0;x<cantidad;x++){
-    articulo=archivo.BuscarArt(x);
-    if(articulo.getID()==codigoArticulo){
-        return true;
+bool ValidarArticulo(int codigoArticulo)
+{
+    Articulo articulo;
+    ArticuloArchivo archivo;
+    int cantidad= archivo.getCantidad();
+    for(int x=0; x<cantidad; x++)
+    {
+        articulo=archivo.BuscarArt(x);
+        if(articulo.getID()==codigoArticulo)
+        {
+            return true;
+        }
     }
-}
-cout<<"Codigo de articulo no existe"<< endl;
-return false;
+    cout<<"Codigo de articulo no existe"<< endl;
+    return false;
 
 }
 

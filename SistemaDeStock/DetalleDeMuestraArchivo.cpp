@@ -39,3 +39,19 @@ fclose(pFile);
 return obj;
 
 }
+
+int DetalleDeMuestraArchivo::buscar(int IDProducto)
+{
+  int i, cantidadRegistros = this->CantidadRegistros();
+  DetalleDeMuestra aux;
+
+  for(i=0; i<cantidadRegistros; i++)
+  {
+    aux = this->Leer(i);
+    if (aux.getIDproducto() == IDProducto)
+    {
+      return i;
+    }
+  }
+  return -1;
+}

@@ -10,6 +10,7 @@ class DetalleDeMuestraArchivo
        bool Guardar(DetalleDeMuestra detalle);
        int CantidadRegistros();
        DetalleDeMuestra Leer(int numeroDeRegistro);
+       int buscar(int IDProducto);
 
 
 

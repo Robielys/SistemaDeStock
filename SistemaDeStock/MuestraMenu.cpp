@@ -96,7 +96,7 @@ void MuestraMenu::guardar()
             x=10;
         }
     }
-        cout<<"----------------------------------------------------------------------------------------"<<endl;
+    cout<<"----------------------------------------------------------------------------------------"<<endl;
     if(limite ==10)
     {
         cout<<endl;
@@ -135,9 +135,57 @@ void MuestraMenu::ListarDetalle()
             aumentar++;
         }
     }
-     cout << "-------------------------------------------------------------------------------"<< endl;
+    cout << "-------------------------------------------------------------------------------"<< endl;
     system("pause");
 
+}
+
+
+void MuestraMenu::Consulta()
+{
+    Articulo articulo;
+    ArticuloArchivo archivoArticulo;
+    int cantidadArticulo=archivoArticulo.getCantidad();
+    int *TotalArticulo= new int[cantidadArticulo];
+    int *IdArticulo= new int[cantidadArticulo];
+
+    if(TotalArticulo == nullptr)
+        return;
+    if(IdArticulo == nullptr)
+        return;
+
+    for(int x=0; x<cantidadArticulo; x++)
+    {
+        TotalArticulo[x]=0;
+        for(int i=0; i<cantidadArticulo; i++)
+        {
+            IdArticulo[i]=0;
+        }
+    }
+
+    DetalleDeMuestra detalleM;
+    DetalleDeMuestraArchivo archivoDetalle;
+    int cantidadDetalle= archivoDetalle.CantidadRegistros();
+    for(int x=0; x<cantidadArticulo; x++)
+    {
+        articulo=archivoArticulo.BuscarArt(x);
+        IdArticulo[x]=articulo.getID();
+
+        for(int i=0; i<cantidadDetalle; i++)
+        {
+            detalleM=archivoDetalle.Leer(i);
+            if(articulo.getID()== detalleM.getIDproducto())
+            {
+                TotalArticulo[x]+=detalleM.getStock();
+            }
+        }
+
+    }
+    rlutil::cls();
+    MostrarRanking(IdArticulo,TotalArticulo,cantidadArticulo);
+    delete[] IdArticulo;
+    delete[] TotalArticulo;
+    system("pause");
 }
 void MuestraMenu::Mostrar()
 {
@@ -149,28 +197,29 @@ void MuestraMenu::Mostrar()
         cout<< " 1.Lista de pedidos de muestras" << endl;
         cout<< " 2.Cargar nueva muestra" << endl;
         cout<< " 3.Buscar detalle de muestra" << endl;
+        cout<< " 4.Consulta de cantidad de entregas por articulos" << endl;
         cout<< "----------------------------------------" << endl;
         cout<< " 0.Volver al menu principal" << endl;
         cout<< endl;
         cout<< " Ingresar el Numero de la Opcion: ";
         cin>> opcion;
-        if(ValidarOpcionMenuPrincipal(4,opcion)){
-        switch(opcion)
+        if(ValidarOpcionMenuPrincipal(5,opcion))
         {
-        case 1:
-            Listar();
-            break;
-        case 2:
-        {
-            guardar();
-        }
-        break;
-        case 3:
-        {
-            ListarDetalle();
-        }
-        break;
-        }
+            switch(opcion)
+            {
+            case 1:
+                Listar();
+                break;
+            case 2:
+                guardar();
+                break;
+            case 3:
+                ListarDetalle();
+                break;
+            case 4:
+                Consulta();
+                break;
+            }
         }
     }
 
