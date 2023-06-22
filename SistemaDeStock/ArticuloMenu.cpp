@@ -15,8 +15,9 @@ void ArticuloMenu::Listar()
 
     archivo.Listar(Art, cantidad);
 
-    int Aumentar = 4;
+    int Aumentar = 7;
     rlutil::cls();
+    TituloArticulos();
     EncabezadoDeArticulos();
     for(int i=0; i<cantidad; i++)
     {
@@ -35,14 +36,23 @@ void ArticuloMenu::guardar()
     int Numero;
     do
     {
-        Articulo Art;
+        Articulo Art,articulo;
         ArticuloArchivo CarArt;
         Art.Cargar();
         if(CarArt.guardar(Art))
         {
+        int cantidad=CarArt.getCantidad();
+        for(int x=0; x<cantidad; x++)
+        {
+            articulo=CarArt.BuscarArt(x);
+            if(articulo.getID()==Art.getID()){
+
             rlutil::cls();
+            TituloArticuloNuevo();
             EncabezadoDeArticulos();
-            Art.Mostrar(4);
+            Art.Mostrar(7);
+            }
+        }
             cout << "Articulo guardado sastifactoriamente" << endl;
         }
         else
@@ -114,8 +124,9 @@ void ArticuloMenu::editar()
         {
             rlutil::cls();
             Art=CarArt.BuscarArt(posicion);
+            TituloArticulos();
             EncabezadoDeArticulos();
-            Art.Mostrar(4);
+            Art.Mostrar(7);
             cout << "Cantidad a ingresar: ";
             cin >> can;
             Art.setStock(can);
@@ -196,7 +207,7 @@ void ArticuloMenu::ConsultaStock()
     cout<<"1.Categoria"<<endl;
     cout<<"2.Stock"<<endl;
     cin>>opcion;
-    }while(ValidarOpcionMenuPrincipal(2,opcion)==false);
+    }while(ValidarOpcionMenuPrincipal(3,opcion)==false);
     if(opcion==1){
 
         BuscarCategoria();
@@ -211,7 +222,7 @@ void ArticuloMenu::ConsultaStock()
     {
         articulo = archivo.BuscarArt(i);
 
-        if(articulo.getStock()<=Cantidad)
+        if(articulo.getStock()<=Cantidad&& articulo.getEstado())
         {
             articulo.Mostrar(aumentar);
             aumentar++;

@@ -10,17 +10,21 @@ using namespace std;
 
 void ClienteMenu::Listar()
 {
-    int aumentar=4;
+    int aumentar=7;
     ClienteArchivo archivo;
     int cantidad = archivo.getCantidad();
     Cliente *cliente= new Cliente[cantidad];
     archivo.listar(cliente, cantidad);
     rlutil::cls();
+    TituloClientes();
     EncabezadoDeClientes();
     for(int i=0; i<cantidad; i++)
     {
-        cliente[i].Mostrar(aumentar);
-        aumentar++;
+        if(cliente[i].getEstado())
+        {
+            cliente[i].Mostrar(aumentar);
+            aumentar++;
+        }
     }
     cout<<"-------------------------------------------------------------------------"<<endl;
     delete[] cliente;
@@ -38,12 +42,14 @@ void ClienteMenu::guardar()
     if(archivo.guardar(cliente))
     {
         int cantidad=archivo.getCantidad();
-        for(int x=0; x<cantidad;x++){
+        for(int x=0; x<cantidad; x++)
+        {
             cliente2=archivo.BuscarCliente(x);
-            if(cliente2.getCuit()==cliente.getCuit()){
-        rlutil::cls();
-        EncabezadoDeClientes();
-        cliente2.Mostrar(4);
+            if(cliente2.getCuit()==cliente.getCuit())
+            {
+                rlutil::cls();
+                EncabezadoDeClientes();
+                cliente2.Mostrar(4);
 
             }
         }
@@ -205,24 +211,25 @@ void ClienteMenu::mostrar()
         cout<< endl;
         cout<< " Ingresar el Numero de la Opcion: ";
         cin>>opcion;
-        if(ValidarOpcionMenuPrincipal(5,opcion)){
-        switch(opcion)
+        if(ValidarOpcionMenuPrincipal(5,opcion))
         {
-        case 1:
-            Listar();
-            break;
-        case 2:
-            guardar();
-            break;
-        case 3:
-            baja();
-            break;
-        case 4:
-            editar();
-            break;
+            switch(opcion)
+            {
+            case 1:
+                Listar();
+                break;
+            case 2:
+                guardar();
+                break;
+            case 3:
+                baja();
+                break;
+            case 4:
+                editar();
+                break;
 
+            }
         }
-    }
     }
     while (opcion!=0);
 }

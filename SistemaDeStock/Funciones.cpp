@@ -144,10 +144,11 @@ bool ValidarModelo( const char *modelo)
     for(int x =0; x<cantidad; x++)
     {
         articulo=archivoA.BuscarArt(x);
-        if(articulo.getModelo()== modelo)
+        if(strcmp(articulo.getModelo(), modelo)==0)
         {
             cout<<"Este modelo ya existe";
             cout<<endl;
+            system("pause");
             return true;
         }
     }
@@ -199,6 +200,17 @@ bool ValidarCantidad(int cantidad)
         return false;
     }
 }
+void TituloArticulos(){
+    cout<<"*************************************************************************"<<endl;
+    cout<<"                          Lista de articulos                             "<<endl;
+    cout<<"========================================================================="<<endl;
+}
+
+void TituloArticuloNuevo(){
+    cout<<"*************************************************************************"<<endl;
+    cout<<"                            Nuevo articulo                               "<<endl;
+    cout<<"========================================================================="<<endl;
+}
 
 void EncabezadoDeArticulos()
 {
@@ -206,6 +218,12 @@ void EncabezadoDeArticulos()
     cout<<"| Codigo | Categoria | Modelo | Material | Capacidad | Diametro | Stock |"<<endl;
     cout<<"-------------------------------------------------------------------------"<<endl;
 
+}
+
+void TituloClientes(){
+    cout<<"*************************************************************************"<<endl;
+    cout<<"                           Lista de clientes                             "<<endl;
+    cout<<"========================================================================="<<endl;
 }
 
 void EncabezadoDeClientes()

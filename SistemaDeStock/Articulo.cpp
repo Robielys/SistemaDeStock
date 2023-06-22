@@ -107,6 +107,7 @@ bool Articulo::getEstado()
 void Articulo::Cargar()
 {
     rlutil::cls();
+    TituloArticuloNuevo();
     ArticuloArchivo reg;
     int validar=0;
     cout << "Ingresar Categoria: ";
@@ -114,7 +115,7 @@ void Articulo::Cargar()
     do{
     cout << "Ingresar Modelo: ";
     cin >> _Modelo;
-    }while(ValidarModelo(_Modelo)==true);
+    }while(ValidarModelo(_Modelo));
     cout << "Ingresar Tipo de Material: ";
     cin >> _TipoDeMaterial;
     cout << "Ingresar Capacidad: ";

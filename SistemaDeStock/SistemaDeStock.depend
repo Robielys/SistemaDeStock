@@ -167,7 +167,7 @@
 
 1687042872 
 
-1687288761 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articulo.cpp
+1687459956 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articulo.cpp
 	<iostream>
 	<string.h>
 	"Articulo.h"
@@ -188,7 +188,7 @@
 	<cstring>
 	"Articulo.h"
 
-1687387819 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articulomenu.cpp
+1687460706 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\articulomenu.cpp
 	<string>
 	<iostream>
 	"ArticuloMenu.h"
@@ -219,7 +219,7 @@
 1686259424 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\clientearchivo.h
 	"Cliente.h"
 
-1687289922 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\clientemenu.cpp
+1687457644 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\clientemenu.cpp
 	<string>
 	<iostream>
 	"ClienteMenu.h"
@@ -317,7 +317,7 @@
 1687355915 c:\users\agnostic\documents\github\sistemadestock\sistemadestock\detalledemuestraarchivo.h
 	"DetalleDeMuestra.h"
 
-1687391495 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestramenu.cpp
+1687391806 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestramenu.cpp
 	<string>
 	<iostream>
 	"Muestra.h"
@@ -369,7 +369,7 @@
 	"MuestraArchivo.h"
 	"rlutil.h"
 
-1687391094 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\funciones.cpp
+1687459956 source:c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\funciones.cpp
 	<iostream>
 	"Funciones.h"
 	"Articulo.h"
@@ -381,7 +381,7 @@
 	"MuestraArchivo.h"
 	"rlutil.h"
 
-1687391094 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\funciones.h
+1687458109 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\funciones.h
 	"Cliente.h"
 	"Muestra.h"
 
