@@ -189,8 +189,19 @@ void ArticuloMenu::ConsultaStock()
     ArticuloArchivo archivo;
     int cantidadArticulos = archivo.getCantidad();
 
-    int Cantidad=0;
-    int aumentar=4;
+    int Cantidad=0,aumentar=4,opcion;
+    do{
+    rlutil::cls();
+    cout<<"¿Como desea filtrar?"<<endl;
+    cout<<"1.Categoria"<<endl;
+    cout<<"2.Stock"<<endl;
+    cin>>opcion;
+    }while(ValidarOpcionMenuPrincipal(2,opcion)==false);
+    if(opcion==1){
+
+        BuscarCategoria();
+    }
+    if(opcion==2){
     cout<< "Ingrese hasta que cantidad de Stock desea filtrar: ";
     cin>>Cantidad;
     rlutil::cls();
@@ -208,6 +219,7 @@ void ArticuloMenu::ConsultaStock()
 
     }
     cout<<"-------------------------------------------------------------------------"<<endl;
+}
 system("pause");
 }
 

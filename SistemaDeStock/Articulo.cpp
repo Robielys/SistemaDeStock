@@ -252,6 +252,16 @@ void Articulo::MostrarBaja(int Aumentar)
 }
 bool Articulo::modificar()
 {
-    cout << "Ingresar Stock: ";
-    cin >> _Stock;
+    int validar=1;
+    do{
+        cout << "Ingresar Stock: ";
+        cin >> _Stock;
+        if(_Stock>0){
+            validar=0;
+        }
+        else{
+            cout<<"La cantidad ingresada no puede ser negativa"<<endl;
+        }
+    }while(validar!=0);
+
 }

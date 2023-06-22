@@ -82,7 +82,7 @@
 	<iostream>
 	"ProgramaPrincipal.h"
 
-1687271416 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\articulo.cpp
+1687396620 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\articulo.cpp
 	<iostream>
 	<string.h>
 	"Articulo.h"
@@ -134,7 +134,7 @@
 	"ArticuloArchivo.h"
 	"Articulo.h"
 
-1687370523 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\articulomenu.cpp
+1687400851 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\articulomenu.cpp
 	<string>
 	<iostream>
 	"ArticuloMenu.h"
@@ -335,7 +335,7 @@
 
 1687382098 c:\users\robie\onedrive\documentos\github\sistemadestock\sistemadestock\muestramenu.h
 
-1687363012 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\muestramenu.cpp
+1687395736 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\muestramenu.cpp
 	<string>
 	<iostream>
 	"Muestra.h"
@@ -353,11 +353,11 @@
 
 1687355259 c:\users\agnostic\documents\github\sistemadestock\sistemadestock\muestramenu.h
 
-1687362699 c:\users\agnostic\documents\github\sistemadestock\sistemadestock\funciones.h
+1687400851 c:\users\agnostic\documents\github\sistemadestock\sistemadestock\funciones.h
 	"Cliente.h"
 	"Muestra.h"
 
-1687362808 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\funciones.cpp
+1687400779 source:c:\users\agnostic\documents\github\sistemadestock\sistemadestock\funciones.cpp
 	<iostream>
 	"Funciones.h"
 	"Articulo.h"

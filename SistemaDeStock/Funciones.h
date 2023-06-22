@@ -19,4 +19,6 @@ void TituloPedidos();
 void TituloDetalles();
 void MostrarMuestras();
 void MostrarRanking(int *vecArticulo,int *vecTotal, int cantidad);
+void BuscarTipoCategoria(const char *Tipo);
+void BuscarCategoria();
 #endif // FUNCIONES_H

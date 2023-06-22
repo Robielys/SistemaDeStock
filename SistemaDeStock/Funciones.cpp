@@ -9,10 +9,75 @@ using namespace std;
 #include "Muestra.h"
 #include "MuestraArchivo.h"
 #include "rlutil.h"
+void BuscarTipoCategoria(const char *Tipo){
+    int aumentar=4;
+    Articulo articulo;
+    ArticuloArchivo archivo;
+    int cantidadArticulos = archivo.getCantidad();
 
+    rlutil::cls();
+    EncabezadoDeArticulos();
+    int validacion=0;
+    for(int i=0; i<cantidadArticulos; i++)
+    {
+        articulo = archivo.BuscarArt(i);
+
+        if(strcmp(articulo.getCategoria(),Tipo)==0&& articulo.getEstado())
+        {
+            articulo.Mostrar(aumentar);
+            aumentar++;
+        }
+
+    }
+    cout<<"-------------------------------------------------------------------------"<<endl;
+
+}
+
+void BuscarCategoria()
+{
+    int tipoCategoria;
+    do
+    {
+        cout<< "1.Tapa"<<endl;
+        cout<< "2.Envase"<<endl;
+        cout<< "3.Gatillo"<<endl;
+        cout<< "4.Valvula"<<endl;
+        cout<< "5.Gotero"<<endl;
+        cout<< "6.Cremera"<<endl;
+        cout<< "7.Pote"<<endl;
+        cout<< "Que categoria quiere ver: ";
+        cin>>tipoCategoria;
+    }
+    while(ValidarOpcionMenuPrincipal(8,tipoCategoria)==false);
+    switch(tipoCategoria)
+    {
+    case 1:
+        BuscarTipoCategoria("Tapa");
+        break;
+    case 2:
+        BuscarTipoCategoria("Envase");
+        break;
+    case 3:
+        BuscarTipoCategoria("Gatillo");
+        break;
+    case 4:
+        BuscarTipoCategoria("Valvula");
+        break;
+    case 5:
+        BuscarTipoCategoria("Gotero");
+        break;
+    case 6:
+        BuscarTipoCategoria("Cremera");
+        break;
+    case 7:
+        BuscarTipoCategoria("Pote");
+        break;
+    }
+
+}
 void MostrarRanking(int *vecArticulo,int *vecTotal, int cantidad)
 {
-int cantidadTotal=0;
+    int cantidadTotal=0;
     cout<<"**************************************************************"<<endl;
     cout<<"       Consulta de cantidad de articulos entregados           "<<endl;
     cout<<"=============================================================="<<endl;
@@ -122,14 +187,17 @@ bool ValidarArticulo(int codigoArticulo)
 
 }
 
-bool ValidarCantidad(int cantidad){
-if(cantidad<=6){
-    return true;
-}
-else {
-    cout<<"El maximo permitido por productos es de 6 unidades"<<endl;
+bool ValidarCantidad(int cantidad)
+{
+    if(cantidad<=6)
+    {
+        return true;
+    }
+    else
+    {
+        cout<<"El maximo permitido por productos es de 6 unidades"<<endl;
         return false;
-}
+    }
 }
 
 void EncabezadoDeArticulos()
@@ -148,7 +216,8 @@ void EncabezadoDeClientes()
 
 }
 
-void TituloDeMuestras(){
+void TituloDeMuestras()
+{
     cout<<"*********************************************************"<<endl;
     cout<<"               Lista de pedidos de muestras              "<<endl;
     cout<<"========================================================="<<endl;
@@ -162,12 +231,14 @@ void EncabezadoDeMuestras()
 
 
 }
-void TituloPedidos(){
+void TituloPedidos()
+{
     cout<<"*******************************************************************************"<<endl;
     cout<<"                          Solicitud de muestras                                "<<endl;
     cout<<"==============================================================================="<<endl;
 }
-void TituloDetalles(){
+void TituloDetalles()
+{
     cout<<"*******************************************************************************"<<endl;
     cout<<"                         Detalle de muestras                                   "<<endl;
     cout<<"==============================================================================="<<endl;
